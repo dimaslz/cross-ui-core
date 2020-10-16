@@ -1,0 +1,1 @@
+import{p as e,b as t}from"./p-8556aad7.js";(()=>{const t=import.meta.url,l={};return""!==t&&(l.resourcesUrl=new URL(".",t).href),e(l)})().then(e=>t([["p-69e44ce2",[[1,"cross-button",{ui:[1025],color:[1],size:[1],circle:[4],square:[4],pill:[4],fullWidth:[4,"full-width"],disabled:[4],selected:[4],type:[1]}],[1,"my-component",{first:[1],middle:[1],last:[1]}]]]],e));
