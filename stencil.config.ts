@@ -18,21 +18,6 @@ export const config: Config = {
     shadowDomShim: false,
   },
   globalStyle: 'src/style.scss',
-  // outputTargets: [
-  //   {
-  //     type: 'dist',
-  //     esmLoaderPath: '../loader',
-  //   },
-  //   {
-  //     type: 'docs-readme'
-  //   },
-  //   {
-  //     type: 'www',
-  //     serviceWorker: null, // disable service workers
-  //     baseUrl: 'http://localhost:3333'
-  //   },
-  //   {type: 'dist-hydrate-script'}
-  // ],
   outputTargets: [
     {
       type: 'dist',
