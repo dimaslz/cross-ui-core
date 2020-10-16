@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`cross-button Snapshot 1`] = `
+<cross-button>
+  <mock:shadow-root>
+    <button class="CrossUIButton blue false medium simple" type="button">
+      <slot></slot>
+    </button>
+  </mock:shadow-root>
+  Click me!
+</cross-button>
+`;
