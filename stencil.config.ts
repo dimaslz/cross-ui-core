@@ -48,25 +48,7 @@ export const config: Config = {
   plugins: [
     sass({}),
     postcss({
-      plugins: [
-        require('tailwindcss')('./tailwind.config.js'),
-        require('postcss-nested'),
-        autoprefixer(),
-        ...(process.env.NODE_ENV === 'production'
-          ? [
-              purgecss({
-                content: ['./src/components/**/*.tsx', './src/components/**/*.scss'],
-                defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || [],
-                safelist: {
-                  // standard: [/red$/],
-                  // deep: [/blue$/],
-                  greedy: [/w-full|w-\d{2}/],
-                },
-              }),
-              cssnano(),
-            ]
-          : []),
-      ],
+      plugins: [require('tailwindcss')('./tailwind.config.js'), require('postcss-nested'), autoprefixer()],
     }),
   ],
   nodeResolve: {

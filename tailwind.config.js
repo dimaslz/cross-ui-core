@@ -1,22 +1,19 @@
-// import { postcss } from '@stencil/postcss';
-// import autoprefixer from 'autoprefixer';
-
 module.exports = {
-  purge: false,
+  purge: {
+    enabled: process.env.NODE_ENV === 'production',
+    content: ['./src/**/*.tsx', './src/**/*.scss'],
+    options: {
+      whitelistPatterns: [],
+    },
+  },
   theme: {
     extend: {},
   },
   variants: {},
-  // plugins: [
-  //   postcss({
-  //     plugins: [
-  //       require('tailwindcss')('./tailwind.config.js'),
-  //       require('postcss-nested'),
-  //       autoprefixer(),
-  //       ...(process.env.NODE_ENV === 'production'
-  //         ? [/* purgecss */, require('cssnano')]
-  //         : [])
-  //     ]
-  //   })
-  // ]
+  future: {
+    removeDeprecatedGapUtilities: true,
+    purgeLayersByDefault: true,
+    defaultLineHeights: true,
+    standardFontWeights: true,
+  },
 };
