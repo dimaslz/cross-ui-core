@@ -15,6 +15,7 @@
     "loader/"
   ],
   "scripts": {
+    "build:prod": "NODE_ENV=production stencil build --prod --docs",
     "build": "NODE_ENV=production stencil build --docs",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
