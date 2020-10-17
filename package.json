@@ -15,10 +15,8 @@
     "loader/"
   ],
   "scripts": {
-    "build:prod": "NODE_ENV=production stencil build --prod --docs",
-    "build": "NODE_ENV=production stencil build --docs",
+    "build": "rimraf dist && NODE_ENV=production stencil build --prod --docs",
     "start": "stencil build --dev --watch --serve",
-    "dev": "stencil build ./src/dev.ts --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate"
@@ -38,6 +36,7 @@
     "jest": "^26.5.3",
     "jest-cli": "^26.5.3",
     "puppeteer": "^5.3.1",
+    "rimraf": "^3.0.2",
     "tailwindcss": "^1.9.2",
     "workbox-build": "^5.1.4"
   }
