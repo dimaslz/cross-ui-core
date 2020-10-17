@@ -1,16 +1,24 @@
-import { Component, h, Prop, Element, Host } from "@stencil/core";
+import { Component, h, Prop, Element, Host, Listen } from '@stencil/core';
 export class Button {
   constructor() {
-    this.ui = "simple";
-    this.color = "blue";
-    this.size = "medium";
+    this.ui = 'simple';
+    this.color = 'blue';
+    this.size = 'medium';
     this.circle = false;
     this.square = false;
     this.pill = false;
     this.fullWidth = false;
     this.disabled = false;
     this.selected = false;
-    this.type = "button";
+    this.type = 'button';
+  }
+  onClickHandler($event) {
+    var _a, _b;
+    if (this.disabled) {
+      $event.stopPropagation();
+      return false;
+    }
+    (_b = (_a = this === null || this === void 0 ? void 0 : this.el) === null || _a === void 0 ? void 0 : _a.onclick) === null || _b === void 0 ? void 0 : _b.call(this, $event);
   }
   render() {
     var _a;
@@ -21,9 +29,9 @@ export class Button {
       this.color,
       this.size,
       this.ui,
-      this.circle && 'circle',
-      this.square && 'square',
-      this.fullWidth && 'w-full',
+      this.circle ? 'circle' : '',
+      this.square ? 'square' : '',
+      this.fullWidth ? 'w-full' : '',
       extraClasses,
     ].join(' ');
     return (h(Host, null,
@@ -55,7 +63,7 @@ export class Button {
       },
       "attribute": "ui",
       "reflect": false,
-      "defaultValue": "\"simple\""
+      "defaultValue": "'simple'"
     },
     "color": {
       "type": "string",
@@ -73,7 +81,7 @@ export class Button {
       },
       "attribute": "color",
       "reflect": false,
-      "defaultValue": "\"blue\""
+      "defaultValue": "'blue'"
     },
     "size": {
       "type": "string",
@@ -91,7 +99,7 @@ export class Button {
       },
       "attribute": "size",
       "reflect": false,
-      "defaultValue": "\"medium\""
+      "defaultValue": "'medium'"
     },
     "circle": {
       "type": "boolean",
@@ -217,8 +225,15 @@ export class Button {
       },
       "attribute": "type",
       "reflect": false,
-      "defaultValue": "\"button\""
+      "defaultValue": "'button'"
     }
   }; }
   static get elementRef() { return "el"; }
+  static get listeners() { return [{
+      "name": "click",
+      "method": "onClickHandler",
+      "target": undefined,
+      "capture": true,
+      "passive": false
+    }]; }
 }

@@ -2,16 +2,16 @@
 
 import { Components, JSX } from "../types/components";
 
+interface AppHome extends Components.AppHome, HTMLElement {}
+export const AppHome: {
+  prototype: AppHome;
+  new (): AppHome;
+};
+
 interface CrossButton extends Components.CrossButton, HTMLElement {}
 export const CrossButton: {
   prototype: CrossButton;
   new (): CrossButton;
-};
-
-interface MyComponent extends Components.MyComponent, HTMLElement {}
-export const MyComponent: {
-  prototype: MyComponent;
-  new (): MyComponent;
 };
 
 /**

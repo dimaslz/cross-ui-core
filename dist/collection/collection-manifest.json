@@ -1,7 +1,7 @@
 {
   "entries": [
     "./components/button/button.js",
-    "./components/my-component/my-component.js"
+    "../dev/components/home/home.js"
   ],
   "compiler": {
     "name": "@stencil/core",

@@ -25,6 +25,30 @@ const supportsConstructibleStylesheets =  /*@__PURE__*/ (() => {
         return false;
     })()
     ;
+const addHostEventListeners = (elm, hostRef, listeners, attachParentListeners) => {
+    if ( listeners) {
+        listeners.map(([flags, name, method]) => {
+            const target =  elm;
+            const handler = hostListenerProxy(hostRef, method);
+            const opts = hostListenerOpts(flags);
+            plt.ael(target, name, handler, opts);
+            (hostRef.$rmListeners$ = hostRef.$rmListeners$ || []).push(() => plt.rel(target, name, handler, opts));
+        });
+    }
+};
+const hostListenerProxy = (hostRef, methodName) => (ev) => {
+    {
+        if (hostRef.$flags$ & 256 /* isListenReady */) {
+            // instance is ready, let's call it's member method for this event
+            hostRef.$lazyInstance$[methodName](ev);
+        }
+        else {
+            (hostRef.$queuedListeners$ = hostRef.$queuedListeners$ || []).push([methodName, ev]);
+        }
+    }
+};
+// prettier-ignore
+const hostListenerOpts = (flags) =>  (flags & 2 /* Capture */) !== 0;
 const HYDRATED_CSS = '{visibility:hidden}.hydrated{visibility:inherit}';
 const createTime = (fnName, tagName = '') => {
     {
@@ -211,6 +235,43 @@ const setAccessor = (elm, memberName, oldValue, newValue, isSvg, flags) => {
             const newClasses = parseClassList(newValue);
             classList.remove(...oldClasses.filter(c => c && !newClasses.includes(c)));
             classList.add(...newClasses.filter(c => c && !oldClasses.includes(c)));
+        }
+        else if ( ( !isProp ) && memberName[0] === 'o' && memberName[1] === 'n') {
+            // Event Handlers
+            // so if the member name starts with "on" and the 3rd characters is
+            // a capital letter, and it's not already a member on the element,
+            // then we're assuming it's an event listener
+            if (memberName[2] === '-') {
+                // on- prefixed events
+                // allows to be explicit about the dom event to listen without any magic
+                // under the hood:
+                // <my-cmp on-click> // listens for "click"
+                // <my-cmp on-Click> // listens for "Click"
+                // <my-cmp on-ionChange> // listens for "ionChange"
+                // <my-cmp on-EVENTS> // listens for "EVENTS"
+                memberName = memberName.slice(3);
+            }
+            else if (isMemberInElement(win, ln)) {
+                // standard event
+                // the JSX attribute could have been "onMouseOver" and the
+                // member name "onmouseover" is on the window's prototype
+                // so let's add the listener "mouseover", which is all lowercased
+                memberName = ln.slice(2);
+            }
+            else {
+                // custom event
+                // the JSX attribute could have been "onMyCustomEvent"
+                // so let's trim off the "on" prefix and lowercase the first character
+                // and add the listener "myCustomEvent"
+                // except for the first character, we keep the event name case
+                memberName = ln[2] + memberName.slice(3);
+            }
+            if (oldValue) {
+                plt.rel(elm, memberName, oldValue, false);
+            }
+            if (newValue) {
+                plt.ael(elm, memberName, newValue, false);
+            }
         }
         else {
             // Set property if it exists and it's not a SVG
@@ -494,6 +555,15 @@ const dispatchHooks = (hostRef, isInitialLoad) => {
     const endSchedule = createTime('scheduleUpdate', hostRef.$cmpMeta$.$tagName$);
     const instance =  hostRef.$lazyInstance$ ;
     let promise;
+    if (isInitialLoad) {
+        {
+            hostRef.$flags$ |= 256 /* isListenReady */;
+            if (hostRef.$queuedListeners$) {
+                hostRef.$queuedListeners$.map(([methodName, event]) => safeCall(instance, methodName, event));
+                hostRef.$queuedListeners$ = null;
+            }
+        }
+    }
     endSchedule();
     return then(promise, () => updateComponent(hostRef, instance, isInitialLoad));
 };
@@ -599,6 +669,17 @@ const appDidLoad = (who) => {
         addHydratedFlag(doc.documentElement);
     }
     nextTick(() => emitEvent(win, 'appload', { detail: { namespace: NAMESPACE } }));
+};
+const safeCall = (instance, method, arg) => {
+    if (instance && instance[method]) {
+        try {
+            return instance[method](arg);
+        }
+        catch (e) {
+            consoleError(e);
+        }
+    }
+    return undefined;
 };
 const then = (promise, thenFn) => {
     return promise && promise.then ? promise.then(thenFn) : thenFn();
@@ -798,12 +879,24 @@ const connectedCallback = (elm) => {
                 initializeComponent(elm, hostRef, cmpMeta);
             }
         }
+        else {
+            // not the first time this has connected
+            // reattach any event listeners to the host
+            // since they would have been removed when disconnected
+            addHostEventListeners(elm, hostRef, cmpMeta.$listeners$);
+        }
         endConnected();
     }
 };
 const disconnectedCallback = (elm) => {
     if ((plt.$flags$ & 1 /* isTmpDisconnected */) === 0) {
         const hostRef = getHostRef(elm);
+        {
+            if (hostRef.$rmListeners$) {
+                hostRef.$rmListeners$.map(rmListener => rmListener());
+                hostRef.$rmListeners$ = undefined;
+            }
+        }
     }
 };
 const bootstrapLazy = (lazyBundles, options = {}) => {
@@ -828,6 +921,9 @@ const bootstrapLazy = (lazyBundles, options = {}) => {
         };
         {
             cmpMeta.$members$ = compactMeta[2];
+        }
+        {
+            cmpMeta.$listeners$ = compactMeta[3];
         }
         const tagName =  cmpMeta.$tagName$;
         const HostElement = class extends HTMLElement {
@@ -908,6 +1004,7 @@ const registerHost = (elm, cmpMeta) => {
         elm['s-p'] = [];
         elm['s-rc'] = [];
     }
+    addHostEventListeners(elm, hostRef, cmpMeta.$listeners$);
     return hostRefs.set(elm, hostRef);
 };
 const isMemberInElement = (elm, memberName) => memberName in elm;

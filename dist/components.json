@@ -1,11 +1,36 @@
 {
-  "timestamp": "2020-10-16T15:47:54",
+  "timestamp": "2020-10-17T03:05:38",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.0.3",
     "typescriptVersion": "4.0.2"
   },
   "components": [
+    {
+      "filePath": "./dev/components/home/home.tsx",
+      "encapsulation": "shadow",
+      "tag": "app-home",
+      "readme": "# app-home\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "cross-button"
+      ],
+      "dependencyGraph": {
+        "app-home": [
+          "cross-button"
+        ]
+      }
+    },
     {
       "filePath": "./src/components/button/button.tsx",
       "encapsulation": "shadow",
@@ -40,7 +65,7 @@
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
-          "default": "\"blue\"",
+          "default": "'blue'",
           "values": [
             {
               "type": "string"
@@ -125,7 +150,7 @@
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
-          "default": "\"medium\"",
+          "default": "'medium'",
           "values": [
             {
               "type": "string"
@@ -159,7 +184,7 @@
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
-          "default": "\"button\"",
+          "default": "'button'",
           "values": [
             {
               "type": "string"
@@ -176,7 +201,7 @@
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
-          "default": "\"simple\"",
+          "default": "'simple'",
           "values": [
             {
               "type": "string"
@@ -188,81 +213,25 @@
       ],
       "methods": [],
       "events": [],
-      "listeners": [],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
-    },
-    {
-      "filePath": "./src/components/my-component/my-component.tsx",
-      "encapsulation": "shadow",
-      "tag": "my-component",
-      "readme": "# my-component\n\n\n",
-      "docs": "",
-      "docsTags": [],
-      "usage": {},
-      "props": [
+      "listeners": [
         {
-          "name": "first",
-          "type": "string",
-          "mutable": false,
-          "attr": "first",
-          "reflectToAttr": false,
-          "docs": "The first name",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "last",
-          "type": "string",
-          "mutable": false,
-          "attr": "last",
-          "reflectToAttr": false,
-          "docs": "The last name",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "middle",
-          "type": "string",
-          "mutable": false,
-          "attr": "middle",
-          "reflectToAttr": false,
-          "docs": "The middle name",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
+          "event": "click",
+          "capture": true,
+          "passive": false
         }
       ],
-      "methods": [],
-      "events": [],
-      "listeners": [],
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [],
+      "dependents": [
+        "app-home"
+      ],
       "dependencies": [],
-      "dependencyGraph": {}
+      "dependencyGraph": {
+        "app-home": [
+          "cross-button"
+        ]
+      }
     }
   ],
   "version": "0.0.1"

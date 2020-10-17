@@ -10,5 +10,6 @@ export declare class Button {
   disabled: boolean;
   selected: boolean;
   type: string;
+  onClickHandler($event: any): boolean;
   render(): any;
 }
