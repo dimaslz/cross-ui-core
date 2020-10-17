@@ -1,34 +1,47 @@
-import { Component, h, Prop, Element, Host } from "@stencil/core";
+import { Component, h, Prop, Element, Host, Listen } from '@stencil/core';
 
 @Component({
-  tag: "cross-button",
-  styleUrl: "button.scss",
+  tag: 'cross-button',
+  styleUrl: 'button.scss',
   shadow: true,
 })
 export class Button {
   @Element() el: HTMLElement;
-  @Prop({ mutable: true }) ui: string = "simple";
-  @Prop() color: string = "blue";
-  @Prop() size: string = "medium";
+  @Prop({ mutable: true }) ui: string = 'simple';
+  @Prop() color: string = 'blue';
+  @Prop() size: string = 'medium';
   @Prop() circle: boolean = false;
   @Prop() square: boolean = false;
   @Prop() pill: boolean = false;
   @Prop() fullWidth: boolean = false;
   @Prop() disabled: boolean = false;
   @Prop() selected: boolean = false;
-  @Prop() type: string = "button";
-  
+  @Prop() type: string = 'button';
+
+  @Listen('click', { capture: true })
+  onClickHandler($event) {
+    if (this.disabled) {
+      $event.stopPropagation();
+      return false;
+    }
+
+    this?.el?.onclick?.call(this, $event);
+  }
+
   render() {
-    const extraClasses = this.el?.className.split(' ').filter(c => c !== 'hydrated').join(' ');
+    const extraClasses = this.el?.className
+      .split(' ')
+      .filter(c => c !== 'hydrated')
+      .join(' ');
     const style: string = [
       'CrossUIButton',
-      this.pill ? 'pill' : '', 
-      this.color, 
+      this.pill ? 'pill' : '',
+      this.color,
       this.size,
       this.ui,
-      this.circle && 'circle',
-      this.square && 'square',
-      this.fullWidth && 'w-full',
+      this.circle ? 'circle' : '',
+      this.square ? 'square' : '',
+      this.fullWidth ? 'w-full' : '',
       extraClasses,
     ].join(' ');
 

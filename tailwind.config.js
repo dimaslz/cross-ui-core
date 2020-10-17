@@ -3,7 +3,7 @@ module.exports = {
     enabled: process.env.NODE_ENV === 'production',
     content: ['./src/**/*.tsx', './src/**/*.scss'],
     options: {
-      whitelistPatterns: [],
+      whitelist: ['w-full'],
     },
   },
   theme: {
