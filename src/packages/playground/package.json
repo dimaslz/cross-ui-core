@@ -1,0 +1,16 @@
+{
+  "name": "@cross-ui/playground",
+  "version": "0.0.1",
+  "description": "Cross UI, agnostic components based in Stencil",
+  "scripts": {
+    "demo": "echo 'hello!'",
+    "start": "stencil build --dev --watch --serve",
+    "build": "rimraf dist && rimraf www && NODE_ENV=production stencil build --prod --docs"
+  },
+  "dependencies": {
+    "@cross-ui/core": "^0.0.1",
+    "@cross-ui/mono-repo": "../core"
+  },
+  "license": "MIT",
+  "devDependencies": {}
+}
