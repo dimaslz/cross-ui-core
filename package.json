@@ -1,25 +1,33 @@
 {
-  "name": "@cross-ui/core",
+  "name": "@cross-ui/mono-repo",
   "version": "0.0.1",
+  "private": true,
   "description": "Cross UI, agnostic components based in Stencil",
-  "main": "dist/index.cjs.js",
-  "module": "dist/custom-elements/index.js",
-  "es2015": "dist/esm/index.mjs",
-  "es2017": "dist/esm/index.mjs",
-  "types": "dist/custom-elements/index.d.ts",
-  "collection": "dist/collection/collection-manifest.json",
-  "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/cross-ui-core/cross-ui-core.js",
+  "main": "src/packages/core/dist/index.cjs.js",
+  "module": "src/packages/core/dist/custom-elements/index.js",
+  "es2015": "src/packages/core/dist/esm/index.mjs",
+  "es2017": "src/packages/core/dist/esm/index.mjs",
+  "types": "src/packages/core/dist/custom-elements/index.d.ts",
+  "collection": "src/packages/core/dist/collection/collection-manifest.json",
+  "collection:main": "src/packages/core/dist/collection/index.js",
+  "unpkg": "src/packages/core/dist/cross-ui-core/cross-ui-core.js",
   "files": [
-    "dist/",
-    "loader/"
+    "src/packages/core/dist/",
+    "src/packages/core/loader/"
   ],
   "scripts": {
-    "build": "rimraf dist && NODE_ENV=production stencil build --prod --docs",
+    "build": "rimraf dist && rimraf www && NODE_ENV=production stencil build ./src --prod --docs",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
-    "generate": "stencil generate"
+    "generate": "stencil generate",
+    "lerna": "lerna exec --scope playground/@cross-ui/playground -- yarn demo",
+    "lerna-ls": "lerna ls",
+    "build:core": "lerna exec --scope @cross-ui/core -- yarn build",
+    "start:core": "lerna exec --scope @cross-ui/core -- yarn start",
+    "dev": "lerna exec --scope @cross-ui/playground -- yarn start",
+    "clean": "lerna clean --yes && rm -rf node_modules",
+    "reset": "yarn clean && yarn"
   },
   "dependencies": {
     "@stencil/core": "^2.0.1"
@@ -35,9 +43,15 @@
     "cssnano": "^4.1.10",
     "jest": "^26.5.3",
     "jest-cli": "^26.5.3",
+    "lerna": "^3.22.1",
     "puppeteer": "^5.3.1",
     "rimraf": "^3.0.2",
     "tailwindcss": "^1.9.2",
     "workbox-build": "^5.1.4"
-  }
+  },
+  "workspaces": [
+    "src/packages/*",
+    "src/packages/core/*",
+    "src/packages/playground/*"
+  ]
 }

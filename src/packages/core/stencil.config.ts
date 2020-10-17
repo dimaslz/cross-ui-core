@@ -9,7 +9,6 @@ console.log('NODE_ENV', process.env.NODE_ENV);
 export const config: Config = {
   namespace: 'cross-ui-core',
   buildEs5: false,
-  srcDir: 'src',
   extras: {
     cssVarsShim: false,
     dynamicImportShim: false,
