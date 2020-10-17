@@ -2,13 +2,10 @@ import { Config } from '@stencil/core';
 import { postcss } from '@stencil/postcss';
 import autoprefixer from 'autoprefixer';
 import { sass } from '@stencil/sass';
-import cssnano from 'cssnano';
-import purgecss from '@fullhuman/postcss-purgecss';
 import { version } from './package.json';
 
 export const config: Config = {
   namespace: 'cross-ui-core',
-
   buildEs5: false,
   extras: {
     cssVarsShim: false,
@@ -17,7 +14,7 @@ export const config: Config = {
     scriptDataOpts: false,
     shadowDomShim: false,
   },
-  globalStyle: 'src/style.scss',
+  globalStyle: process.env.NODE_ENV === 'production' ? 'src/style.scss' : 'dev/style.scss',
   outputTargets: [
     {
       type: 'dist',
@@ -45,6 +42,7 @@ export const config: Config = {
       serviceWorker: undefined, // disable service workers,
     },
   ],
+  srcDir: process.env.NODE_ENV === 'production' ? 'src' : 'dev',
   plugins: [
     sass({}),
     postcss({
