@@ -1,0 +1,19 @@
+@import '../assets/_tailwind.scss';
+// @import '../../node_modules/@cross-ui/core/dist/cross-ui-core/cross-ui-core.css';
+
+/*
+  Global App CSS
+  ----------------------
+  Use this file for styles that should be applied to all components.
+  For example, "font-family" within the "body" selector is a CSS property
+  most apps will want applied to all components.
+
+  Any global CSS variables should also be applied here.
+*/
+
+body {
+  height: 100%;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

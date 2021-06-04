@@ -1,0 +1,30 @@
+{
+  "name": "@cross-ui/landing",
+  "private": true,
+  "version": "0.0.1",
+  "description": "CrossUI landing page",
+  "scripts": {
+    "build:prod": "NODE_ENV=production stencil build --prod",
+    "build": "stencil build",
+    "serve": "NODE_ENV=production stencil build --prod --serve",
+    "start": "stencil build --dev --watch --serve --port 4001",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "generate": "NODE_ENV=production stencil generate"
+  },
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^4.0.3",
+    "@stencil/core": "^2.6.0",
+    "@stencil/postcss": "^2.0.0",
+    "@stencil/router": "^1.0.1",
+    "@stencil/sass": "^1.4.1",
+    "@types/node": "^15.12.0",
+    "autoprefixer": "^10.2.6",
+    "cssnano": "^5.0.5",
+    "tailwindcss": "^2.1.4"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@cross-ui/core": "../core"
+  }
+}

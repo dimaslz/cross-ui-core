@@ -1,0 +1,100 @@
+@import '../../assets/css/_tailwind.scss';
+
+$colors: 'primary', 'secondary', 'accent', 'danger', 'warning', 'success', 'info';
+$colors-maps: (
+  "primary": "blue",
+  "secondary": "gray",
+  "accent": "indigo",
+  "danger": "red",
+  "warning": "yellow",
+  "success": "green",
+  "info": "pink",
+);
+
+.CrossUIButton {
+  @apply cursor-pointer border-solid font-sans flex justify-center;
+
+  @each $color in $colors {
+    &.#{$color} {
+      $color-value: map-get($colors-maps, $color);
+
+      @apply inline-flex items-center antialiased border-2 border-transparent leading-none text-sm px-4 bg-#{$color-value}-500 text-white font-semibold;
+      @apply text-xs px-4;
+
+      &.pill,
+      &.circle {
+        @apply rounded-full;
+      }
+
+      &.circle,
+      &.square {
+        @apply items-center justify-center p-1;
+      }
+
+      // SIZES
+      &.small {
+        @apply h-6 text-xs;
+
+        &.circle,
+        &.square {
+          @apply w-6;
+        }
+      }
+
+      &.medium {
+        @apply h-8 text-sm;
+
+        &.circle,
+        &.square {
+          @apply w-8;
+        }
+      }
+
+      &.large {
+        @apply h-10 text-base;
+
+        &.circle,
+        &.square {
+          @apply w-10;
+        }
+      }
+
+      &.simple {
+        @apply outline-none bg-#{$color-value}-500;
+
+        &:hover:not(:disabled) {
+          @apply bg-#{$color-value}-600;
+        }
+
+        &:focus {
+          @apply border-#{$color-value}-700;
+        }
+      }
+
+      &.outline {
+        @apply outline-none bg-transparent text-#{$color-value}-700 font-semibold border border-#{$color-value}-500;
+
+        &:hover:not(:disabled) {
+          @apply bg-#{$color-value}-600 text-white border-transparent;
+        }
+
+        &:focus {
+          @apply border-#{$color-value}-700;
+        }
+      }
+
+      &.elevated {
+        @apply outline-none bg-white text-gray-800 font-semibold border border-gray-400 shadow;
+
+        &:focus:not(:disabled),
+        &:hover:not(:disabled) {
+          @apply bg-gray-100;
+        }
+      }
+
+      &:disabled {
+        @apply opacity-50 cursor-not-allowed;
+      }
+    }
+  }
+}
