@@ -4,9 +4,9 @@
   "version": "0.0.1",
   "description": "CrossUI landing page",
   "scripts": {
-    "build:prod": "NODE_ENV=production ./node_modules/.bin/stencil build --prod",
+    "build:prod": "NODE_ENV=production stencil build --prod",
     "build": "stencil build",
-    "serve": "NODE_ENV=production stencil build --prod --serve",
+    "serve": "NODE_ENV=production stencil build --prod --serve --prerender",
     "start": "stencil build --dev --watch --serve --port 4001",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
