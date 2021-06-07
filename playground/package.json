@@ -13,7 +13,6 @@
     "generate": "NODE_ENV=production stencil generate"
   },
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^4.0.3",
     "@stencil/core": "^2.6.0",
     "@stencil/postcss": "^2.0.0",
     "@stencil/router": "^1.0.1",
@@ -24,7 +23,5 @@
     "tailwindcss": "^2.1.4"
   },
   "license": "MIT",
-  "dependencies": {
-    "@cross-ui/core": "../core"
-  }
+  "dependencies": {}
 }
