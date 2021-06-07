@@ -44,12 +44,12 @@ export namespace Components {
         "color": string;
         "disabled": boolean;
         "fullWidth": boolean;
+        "outline": boolean;
         "pill": boolean;
         "selected": boolean;
         "size": string;
         "square": boolean;
         "type": string;
-        "ui": string;
     }
 }
 declare global {
@@ -206,12 +206,12 @@ declare namespace LocalJSX {
         "color"?: string;
         "disabled"?: boolean;
         "fullWidth"?: boolean;
+        "outline"?: boolean;
         "pill"?: boolean;
         "selected"?: boolean;
         "size"?: string;
         "square"?: boolean;
         "type"?: string;
-        "ui"?: string;
     }
     interface IntrinsicElements {
         "app-404": App404;

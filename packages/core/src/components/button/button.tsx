@@ -2,19 +2,17 @@ import { Component, h, Prop, Element, Host, Listen } from '@stencil/core';
 
 @Component({
   tag: 'cross-button',
-  // styleUrl: 'button.scss',
-  // shadow: true,
 })
 export class Button {
   @Element() el: HTMLElement;
-  @Prop({ mutable: true }) ui: string = 'simple';
+  @Prop({ mutable: true }) outline: boolean = false;
+  @Prop({ mutable: true }) disabled: boolean = false;
   @Prop() color: string = 'primary';
   @Prop() size: string = 'medium';
   @Prop() circle: boolean = false;
   @Prop() square: boolean = false;
   @Prop() pill: boolean = false;
   @Prop() fullWidth: boolean = false;
-  @Prop() disabled: boolean = false;
   @Prop() selected: boolean = false;
   @Prop() type: string = 'button';
 
@@ -38,16 +36,20 @@ export class Button {
       this.pill ? 'pill' : '',
       this.color,
       this.size,
-      this.ui,
+      this.outline ? 'outline' : 'simple',
       this.circle ? 'circle' : '',
       this.square ? 'square' : '',
-      this.fullWidth ? 'w-full' : '',
+      this.fullWidth ? 'CrossUIButton--full-width' : '',
       extraClasses,
     ].join(' ');
 
     return (
       <Host>
-        <button class={`${style}`} type={this.type} disabled={this.disabled}>
+        <button
+          class={`${style}`}
+          type={this.type}
+          disabled={this.disabled}
+        >
           <slot></slot>
         </button>
       </Host>

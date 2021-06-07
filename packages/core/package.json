@@ -17,10 +17,10 @@
   "scripts": {
     "clean:dist": "rimraf dist",
     "build:prod": "stencil build --prod --docs",
-    "prebuild": "move-file ./src/components/playground .tmp/playground",
     "build": "NODE_ENV=production npm-run-all -s clean:dist build:prod",
-    "postbuild": "move-file .tmp/playground ./src/components/playground && rimraf .tmp",
     "start": "stencil build --dev --watch --serve --port 4000",
+    "dev": "stencil build --dev",
+    "dev:watch": "stencil build --dev --watch",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate"

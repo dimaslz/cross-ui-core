@@ -11,14 +11,12 @@ export namespace Components {
         "color": string;
         "disabled": boolean;
         "fullWidth": boolean;
+        "outline": boolean;
         "pill": boolean;
         "selected": boolean;
         "size": string;
         "square": boolean;
         "type": string;
-        "ui": string;
-    }
-    interface CrossPlayground {
     }
 }
 declare global {
@@ -28,15 +26,8 @@ declare global {
         prototype: HTMLCrossButtonElement;
         new (): HTMLCrossButtonElement;
     };
-    interface HTMLCrossPlaygroundElement extends Components.CrossPlayground, HTMLStencilElement {
-    }
-    var HTMLCrossPlaygroundElement: {
-        prototype: HTMLCrossPlaygroundElement;
-        new (): HTMLCrossPlaygroundElement;
-    };
     interface HTMLElementTagNameMap {
         "cross-button": HTMLCrossButtonElement;
-        "cross-playground": HTMLCrossPlaygroundElement;
     }
 }
 declare namespace LocalJSX {
@@ -45,18 +36,15 @@ declare namespace LocalJSX {
         "color"?: string;
         "disabled"?: boolean;
         "fullWidth"?: boolean;
+        "outline"?: boolean;
         "pill"?: boolean;
         "selected"?: boolean;
         "size"?: string;
         "square"?: boolean;
         "type"?: string;
-        "ui"?: string;
-    }
-    interface CrossPlayground {
     }
     interface IntrinsicElements {
         "cross-button": CrossButton;
-        "cross-playground": CrossPlayground;
     }
 }
 export { LocalJSX as JSX };
@@ -64,7 +52,6 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "cross-button": LocalJSX.CrossButton & JSXBase.HTMLAttributes<HTMLCrossButtonElement>;
-            "cross-playground": LocalJSX.CrossPlayground & JSXBase.HTMLAttributes<HTMLCrossPlaygroundElement>;
         }
     }
 }

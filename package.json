@@ -3,5 +3,11 @@
   "private": true,
   "devDependencies": {
     "lerna": "^4.0.0"
+  },
+  "scripts": {
+    "start:playground": "yarn --cwd playground start",
+    "start:core": "yarn --cwd packages/core dev",
+    "build": "yarn --cwd packages/core build",
+    "build:playground": "yarn --cwd packages/playground build:prod"
   }
 }

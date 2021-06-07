@@ -3,7 +3,7 @@
 exports[`cross-button Snapshot 1`] = `
 <cross-button>
   <mock:shadow-root>
-    <button class="CrossUIButton blue flex justify-center medium simple" type="button">
+    <button class="CrossUIButton primary medium simple" type="button">
       <slot></slot>
     </button>
   </mock:shadow-root>

@@ -45,6 +45,28 @@ export class AppMenu {
                 </ul>
               </ul>
             </li>
+            <li>Framework integrations</li>
+            <li>
+              <ul class="py-2">
+                <ul class="pl-3 text-sm mb-4">
+                  <li>
+                    Angular
+                  </li>
+                  <li>
+                    Vue 2/3 / Nuxt
+                  </li>
+                  <li>
+                    React / Next
+                  </li>
+                  <li>
+                    Svelte
+                  </li>
+                  <li>
+                    Javascript
+                  </li>
+                </ul>
+              </ul>
+            </li>
           </ul>
         </div>
       </div>

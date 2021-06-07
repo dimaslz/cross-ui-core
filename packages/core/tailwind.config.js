@@ -1,11 +1,12 @@
 module.exports = {
   purge: {
     enabled: process.env.NODE_ENV === 'production',
-    content: ['./src/**/*.tsx', './src/**/*.scss'],
-    options: {
-      whitelist: ['w-full'],
-    },
+    content: ['./src/**/*.tsx'],
+    // options: {
+    //   whitelist: ['w-full'],
+    // },
   },
+  // prefix: 'cui-',
   theme: {
     extend: {},
   },
