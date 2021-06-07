@@ -8,6 +8,6 @@
     "start:playground": "yarn --cwd playground start",
     "start:core": "yarn --cwd packages/core dev",
     "build": "yarn --cwd packages/core build",
-    "build:playground": "yarn --cwd packages/playground build:prod"
+    "build:playground": "yarn --cwd playground build:prod"
   }
 }
