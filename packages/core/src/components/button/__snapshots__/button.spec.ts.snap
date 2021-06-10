@@ -2,11 +2,9 @@
 
 exports[`cross-button Snapshot 1`] = `
 <cross-button>
-  <mock:shadow-root>
-    <button class="CrossUIButton primary medium simple" type="button">
-      <slot></slot>
-    </button>
-  </mock:shadow-root>
-  Click me!
+  <!---->
+  <button class="CrossUIButton medium primary simple" type="button">
+    Click me!
+  </button>
 </cross-button>
 `;

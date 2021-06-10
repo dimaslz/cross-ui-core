@@ -1,7 +1,5 @@
 import { Config } from '@stencil/core';
-import { postcss } from '@stencil/postcss';
-import autoprefixer from 'autoprefixer';
-import { sass } from '@stencil/sass';
+
 import { version } from './package.json';
 
 export const config: Config = {
@@ -14,7 +12,6 @@ export const config: Config = {
     scriptDataOpts: false,
     shadowDomShim: false,
   },
-  globalStyle: 'src/style.scss',
   outputTargets: [
     {
       type: 'dist',
@@ -41,12 +38,6 @@ export const config: Config = {
       type: 'www',
       serviceWorker: undefined, // disable service workers,
     },
-  ],
-  plugins: [
-    sass({}),
-    postcss({
-      plugins: [require('tailwindcss')('./tailwind.config.js'), require('postcss-nested'), autoprefixer()],
-    }),
   ],
   nodeResolve: {
     preferBuiltins: true,

@@ -1,22 +1,9 @@
-// @import '../../assets/css/_tailwind.scss';
-
-$colors: 'primary', 'secondary', 'accent', 'danger', 'warning', 'success', 'info';
-$colors-maps: (
-  "primary": "blue",
-  "secondary": "gray",
-  "accent": "indigo",
-  "danger": "red",
-  "warning": "yellow",
-  "success": "green",
-  "info": "pink",
-);
-
 .CrossUIButton {
   @apply cursor-pointer border-solid font-sans flex justify-center;
 
   @each $color in $colors {
     &.#{$color} {
-      $color-value: map-get($colors-maps, $color);
+      $color-value: map-get($colors-map, $color);
 
       @apply inline-flex items-center antialiased border-2 border-transparent leading-none text-sm px-4 bg-#{$color-value}-500 text-white font-semibold;
       @apply text-xs px-4;
@@ -89,7 +76,7 @@ $colors-maps: (
 
       &.simple, &.outline {
         &:focus {
-          @apply ring ring-#{$color-value}-200;
+          @apply ring ring-gray-200;
         }
       }
     }
