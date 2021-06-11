@@ -4,7 +4,7 @@ import { postcss } from '@stencil/postcss';
 import autoprefixer from 'autoprefixer';
 
 export const config: Config = {
-  namespace: 'stencil-component',
+  namespace: 'cross-ui',
   globalStyle: './src/assets/css/components.scss',
   outputTargets: [
     {
