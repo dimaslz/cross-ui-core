@@ -9,14 +9,14 @@
   "types": "dist/custom-elements/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/cross-ui-core/cross-ui-core.js",
+  "unpkg": "dist/stencil-component/stencil-component.esm.js",
   "files": [
     "dist/",
     "loader/"
   ],
   "scripts": {
-    "clean:dist": "rimraf dist",
-    "build:prod": "stencil build --prod --docs",
+    "clean:dist": "rimraf dist && rimraf www && rimraf loader",
+    "build:prod": "stencil build --prod",
     "build": "NODE_ENV=production npm-run-all -s clean:dist build:prod",
     "start": "stencil build --dev --watch --serve --port 4000",
     "dev": "stencil build --dev",
@@ -34,33 +34,12 @@
   "devDependencies": {
     "@stencil/postcss": "^2.0.0",
     "@stencil/sass": "^1.4.1",
-    "@types/jest-cli": "^24.3.0",
+    "@types/jest": "26.0.23",
     "autoprefixer": "^10.2.6",
-    "cssnano": "^5.0.5",
-    "@types/jest": "26.0.21",
     "jest": "26.6.3",
     "jest-cli": "26.6.3",
-    "pptr-testing-library": "^0.6.5",
-    "move-file-cli": "^2.0.0",
     "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.2",
-    "stylelint": "^13.13.1",
-    "stylelint-config-standard": "^22.0.0",
-    "tailwindcss": "^2.1.4",
-    "workbox-build": "^6.1.5"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dimaslz/cross-ui-core.git"
-  },
-  "keywords": [
-    "stenciljs",
-    "webcomponents",
-    "ui"
-  ],
-  "author": "Dimas López <me@dimaslz.io>",
-  "bugs": {
-    "url": "https://github.com/dimaslz/cross-ui-core/issues"
-  },
-  "homepage": "https://github.com/dimaslz/cross-ui-core#readme"
+    "tailwindcss": "^2.1.4"
+  }
 }

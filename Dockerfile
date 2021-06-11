@@ -8,9 +8,8 @@ RUN apk add chromium
 
 # ENV NODE_OPTIONS=--max_old_space_size=4096
 ENV NODE_OPTIONS=--max_old_space_size=2048
-RUN yarn --cwd packages/core install && yarn --cwd playground install
 
-RUN yarn --cwd playground serve
+RUN yarn build
 
 FROM nginx:alpine
 

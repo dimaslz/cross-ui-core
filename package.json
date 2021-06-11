@@ -7,8 +7,7 @@
   "scripts": {
     "start:playground": "yarn --cwd playground start",
     "start:core": "yarn --cwd packages/core dev",
-    "build": "yarn --cwd packages/core build",
-    "build:playground": "yarn --cwd playground build:prod",
-    "serve:playground": "yarn --cwd playground serve"
+    "prebuild": "yarn --cwd packages/core install && yarn --cwd playground install",
+    "build": "yarn --cwd packages/core build && yarn --cwd playground build"
   }
 }

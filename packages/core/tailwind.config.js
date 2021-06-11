@@ -1,16 +1,14 @@
 module.exports = {
   purge: {
     enabled: process.env.NODE_ENV === 'production',
-    content: ['./src/**/*.tsx'],
+    content: ['./src/**/*.tsx', './src/**/*.scss'],
   },
+  darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
   },
-  variants: {},
-  future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true,
-    defaultLineHeights: true,
-    standardFontWeights: true,
+  variants: {
+    extend: {},
   },
-};
+  plugins: [],
+}
