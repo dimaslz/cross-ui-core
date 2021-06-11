@@ -1,6 +1,6 @@
 {
   "name": "@cross-ui/core",
-  "version": "0.0.1-alpha.0",
+  "version": "0.0.1-alpha.1",
   "description": "Cross UI, agnostic components based in Stencil",
   "main": "dist/index.cjs.js",
   "module": "dist/custom-elements/index.js",

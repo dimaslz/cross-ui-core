@@ -1,5 +1,5 @@
 {
-  "name": "stencil-component-loader",
+  "name": "cross-ui-loader",
   "typings": "./index.d.ts",
   "module": "./index.js",
   "main": "./index.cjs.js",
