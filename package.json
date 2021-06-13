@@ -1,8 +1,11 @@
 {
-  "name": "@cross-ui/core-monorepo",
-  "private": true,
+  "name": "@cross-ui/core",
+  "version": "0.0.1-alpha.1",
+  "private": false,
   "devDependencies": {
-    "lerna": "^4.0.0"
+    "@release-it/bumper": "^2.0.0",
+    "lerna": "^4.0.0",
+    "release-it": "^14.9.0"
   },
   "scripts": {
     "start:playground": "yarn --cwd playground start",
@@ -10,6 +13,12 @@
     "build:components": "yarn --cwd packages/core build",
     "build:playground": "yarn --cwd packages/core build",
     "prebuild": "yarn --cwd packages/core install && yarn --cwd playground install",
-    "build": "yarn build:components && yarn build:playground"
-  }
+    "build": "yarn build:components && yarn build:playground",
+    "release": "release-it"
+  },
+  "description": "Agnostic web components based in StencilJS",
+  "main": "index.js",
+  "repository": "git@github.com:dimaslz/cross-ui-core.git",
+  "author": "dimaslz <me@dimaslz.io>",
+  "license": "MIT"
 }
