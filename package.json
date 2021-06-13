@@ -3,7 +3,10 @@
   "version": "0.0.1-alpha.2",
   "private": false,
   "devDependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
     "@release-it/bumper": "^2.0.0",
+    "husky": "^6.0.0",
     "lerna": "^4.0.0",
     "release-it": "^14.9.0"
   },
