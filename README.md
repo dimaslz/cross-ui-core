@@ -6,7 +6,7 @@
 
 </div>
 
-<div style="text-align: center; margin: 30px 0;">
+<div style="text-align: center; margin: 30px 0; display: flex; align-items: center; justify-content: center;">
 	<img src="./playground/src/assets/images/cross-ui-logo-react.svg" height="40" style="margin: 0 10px" />
 	<img src="./playground/src/assets/images/cross-ui-logo-vue.svg" height="40" style="margin: 0 10px"/>
 	<img src="./playground/src/assets/images/cross-ui-logo-angular.svg" height="40" style="margin: 0 10px"/>
