@@ -74,7 +74,8 @@
         }
       }
 
-      &.simple, &.outline {
+      &.simple,
+      &.outline {
         &:focus {
           z-index: 1;
           @apply outline-none ring ring-gray-200 relative;

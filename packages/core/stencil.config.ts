@@ -25,15 +25,9 @@ export const config: Config = {
   plugins: [
     sass({
       injectGlobalPaths: [
-        './src/assets/css/tailwind.scss',
+        './src/assets/css/tailwind.css',
         './src/assets/css/variables.scss',
-        // './src/components/**/*.scss'
       ],
-      // injectGlobalPaths: [
-      //   'src/assets/css/tailwind.scss',
-      //   'src/assets/css/variables.scss',
-      //   'src/components/button/button.scss'
-      // ],
     }),
     postcss({
       plugins: [

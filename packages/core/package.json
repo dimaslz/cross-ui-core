@@ -17,7 +17,7 @@
   "scripts": {
     "clean:dist": "rimraf dist && rimraf www && rimraf loader",
     "build:prod": "stencil build --prod",
-    "build": "NODE_ENV=production npm-run-all -s clean:dist build:prod",
+    "build": "NODE_ENV=production npm-run-all -s clean:dist build:prod && node extra-tasks",
     "start": "stencil build --dev --watch --serve --port 4000",
     "dev": "stencil build --dev",
     "dev:watch": "stencil build --dev --watch",
