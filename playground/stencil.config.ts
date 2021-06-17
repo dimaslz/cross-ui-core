@@ -12,8 +12,8 @@ export const config: Config = {
       type: 'www',
       // comment the following line to disable service workers in production
       serviceWorker: null,
-      // baseUrl: 'https://myapp.local/',
-      baseUrl: 'http://localhost:1234/',
+      baseUrl: 'https://dimaslz.github.io/cross-ui-core/',
+      dir: 'www'
     },
   ],
   plugins: [
