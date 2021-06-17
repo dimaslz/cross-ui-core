@@ -1,6 +1,6 @@
 {
   "name": "@cross-ui/core",
-  "version": "0.0.1-alpha.3",
+  "version": "0.0.1-alpha.4",
   "private": false,
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
