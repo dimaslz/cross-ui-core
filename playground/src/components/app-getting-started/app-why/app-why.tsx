@@ -3,7 +3,7 @@ import { Component, h } from '@stencil/core';
 @Component({
   tag: 'app-why',
   styleUrl: 'app-why.scss',
-  shadow: true,
+  shadow: false,
 })
 export class AppWhy {
   render() {

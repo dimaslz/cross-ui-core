@@ -1,4 +1,3 @@
-@import './_tailwind.scss';
+@import './tailwind.scss';
 
-@import '../../../packages/core/src/assets/css/variables.scss';
-@import '../../../packages/core/src/assets/css/components.scss';
+@import '~@cross-ui/core/dist/cross-ui/cross-ui.css';

@@ -3,7 +3,7 @@ import { Component, h } from '@stencil/core';
 @Component({
   tag: 'app-getting-started',
   styleUrl: 'app-getting-started.scss',
-  shadow: true,
+  shadow: false,
 })
 export class AppGettingStarted {
   render() {

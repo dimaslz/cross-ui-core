@@ -3,7 +3,7 @@ import { Component, h } from '@stencil/core';
 @Component({
   tag: 'app-menu',
   styleUrl: 'app-menu.scss',
-  shadow: true,
+  shadow: false,
 })
 export class AppMenu {
   render() {

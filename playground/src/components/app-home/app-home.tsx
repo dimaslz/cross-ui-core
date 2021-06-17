@@ -4,7 +4,7 @@ import { RouterHistory } from '@stencil/router';
 @Component({
   tag: 'app-home',
   styleUrl: 'app-home.scss',
-  shadow: true,
+  shadow: false,
 })
 export class AppHome {
   @Prop() history: RouterHistory;
@@ -73,7 +73,7 @@ export class AppHome {
   }
 }
 
-/* 
+/*
 <stencil-route-link url="/profile/stencil">
           <button>Profile page</button>
         </stencil-route-link>

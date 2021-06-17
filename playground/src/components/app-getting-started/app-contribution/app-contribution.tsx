@@ -3,7 +3,7 @@ import { Component, h } from '@stencil/core';
 @Component({
   tag: 'app-contribution',
   styleUrl: 'app-contribution.scss',
-  shadow: true,
+  shadow: false,
 })
 export class AppContribution {
   render() {
