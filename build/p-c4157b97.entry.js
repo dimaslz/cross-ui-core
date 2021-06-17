@@ -1,0 +1,1 @@
+import{r as e,h as t}from"./p-ebe189b9.js";const s=class{constructor(t){e(this,t)}render(){return t("div",{class:"min-h-screen -mt-16 flex items-center justify-center flex-col"},t("h1",{class:"text-4xl"},"404 not found"),t("stencil-route-link",{url:"/",class:"pt-8 hover:opacity-75"},"back to home"))}};s.style="";export{s as app_404}

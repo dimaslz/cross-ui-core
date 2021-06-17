@@ -1,0 +1,1 @@
+import{r as e,h as s}from"./p-ebe189b9.js";const c=class{constructor(s){e(this,s)}render(){return s("div",{class:"Welcome flex p-4"},s("app-menu",{class:"w-64 pt-10"}),s("div",{class:"Welcome__content w-full"},s("app-introduction",null)))}};c.style="";export{c as app_welcome}
