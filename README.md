@@ -48,6 +48,7 @@ And `/packages/core`, a stencil project just to have the Stencil component to cr
 ## Author
 ```js
 {
+	license: "MIT",
 	name: "Dimas López",
 	role: "FullStack Software development",
 	alias: "dimaslz",
