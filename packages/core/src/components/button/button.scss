@@ -46,10 +46,10 @@
         }
       }
 
-      &.simple {
+      &.default {
         @apply bg-#{$color-value}-500;
 
-        &:hover:not(:disabled) {
+        &:hover:not(:disabled), &.active {
           @apply bg-#{$color-value}-600;
         }
 
@@ -65,7 +65,7 @@
           @apply text-#{$color-value}-700;
         }
 
-        &:hover:not(:disabled) {
+        &:hover:not(:disabled), &.active {
           @apply border-#{$color-value}-400 text-#{$color-value}-400 border-transparent;
         }
 
@@ -74,7 +74,7 @@
         }
       }
 
-      &.simple,
+      &.default,
       &.outline {
         &:focus {
           z-index: 1;
@@ -88,7 +88,7 @@
     }
   }
 
-  &--full-width {
+  &.full-width {
     @apply w-full;
   }
 }

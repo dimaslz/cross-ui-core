@@ -9,7 +9,8 @@
     "build": "npm-run-all -s clean build:prod",
     "postbuild": "node extra-tasks.js",
     "serve": "NODE_ENV=production stencil build --prod --serve --prerender",
-    "start": "stencil build --dev --watch --serve --port 4001",
+    "start": "stencil build --dev --watch --serve --port 4001 --no-open",
+    "start:open": "stencil build --dev --watch --serve --port 4001",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "NODE_ENV=production stencil generate"

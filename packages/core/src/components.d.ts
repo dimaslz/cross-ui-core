@@ -7,10 +7,14 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface CrossButton {
+        "active": boolean;
         "circle": boolean;
         "color": string;
         "disabled": boolean;
         "fullWidth": boolean;
+        "onBlur": ($event?) => void;
+        "onClick": ($event?) => void;
+        "onFocus": ($event?) => void;
         "outline": boolean;
         "pill": boolean;
         "selected": boolean;
@@ -32,10 +36,14 @@ declare global {
 }
 declare namespace LocalJSX {
     interface CrossButton {
+        "active"?: boolean;
         "circle"?: boolean;
         "color"?: string;
         "disabled"?: boolean;
         "fullWidth"?: boolean;
+        "onBlur"?: ($event?) => void;
+        "onClick"?: ($event?) => void;
+        "onFocus"?: ($event?) => void;
         "outline"?: boolean;
         "pill"?: boolean;
         "selected"?: boolean;
