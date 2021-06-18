@@ -12,9 +12,6 @@ export namespace Components {
         "color": string;
         "disabled": boolean;
         "fullWidth": boolean;
-        "onBlur": ($event?) => void;
-        "onClick": ($event?) => void;
-        "onFocus": ($event?) => void;
         "outline": boolean;
         "pill": boolean;
         "selected": boolean;
@@ -41,9 +38,6 @@ declare namespace LocalJSX {
         "color"?: string;
         "disabled"?: boolean;
         "fullWidth"?: boolean;
-        "onBlur"?: ($event?) => void;
-        "onClick"?: ($event?) => void;
-        "onFocus"?: ($event?) => void;
         "outline"?: boolean;
         "pill"?: boolean;
         "selected"?: boolean;

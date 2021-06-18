@@ -7,6 +7,7 @@
 
 | Property    | Attribute    | Description | Type      | Default     |
 | ----------- | ------------ | ----------- | --------- | ----------- |
+| `active`    | `active`     |             | `boolean` | `false`     |
 | `circle`    | `circle`     |             | `boolean` | `false`     |
 | `color`     | `color`      |             | `string`  | `'primary'` |
 | `disabled`  | `disabled`   |             | `boolean` | `false`     |

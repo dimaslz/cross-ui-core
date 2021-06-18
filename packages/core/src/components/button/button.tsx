@@ -20,10 +20,6 @@ export class Button {
   @Prop() selected: boolean = false;
   @Prop() type: string = 'button';
 
-  @Prop() onClick: ($event?) => void = null;
-  @Prop() onBlur: ($event?) => void = null;
-  @Prop() onFocus: ($event?) => void = null;
-
   componentWillLoad() {
     if (!colors.includes(this.color)) {
       throw new Error(`Color "${this.color}" is not allowed. Please, use one of the following options: ${colors.join(', ')}`);
@@ -41,7 +37,7 @@ export class Button {
       return false;
     }
 
-    this.onClick?.call(this, $event);
+    (this.el as any)?.onClick?.call(this, $event);
   }
 
   @Listen('blur', { capture: true })
@@ -51,7 +47,7 @@ export class Button {
       return false;
     }
 
-    this.onBlur?.call(this, $event);
+    (this.el as any)?.onBlur?.call(this, $event);
   }
 
   @Listen('focus', { capture: true })
@@ -61,7 +57,7 @@ export class Button {
       return false;
     }
 
-    this.onFocus?.call(this, $event);
+    (this.el as any)?.onFocus?.call(this, $event);
   }
 
   render() {
