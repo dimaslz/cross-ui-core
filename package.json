@@ -19,7 +19,7 @@
     "prebuild": "yarn --cwd packages/core install && yarn --cwd playground install",
     "build": "yarn build:components && yarn build:playground",
     "release": "release-it",
-    "predeploy": "yarn build",
+    "predeploy": "ENV=github yarn build",
     "deploy": "gh-pages -d playground/www"
   },
   "description": "Agnostic web components based in StencilJS",

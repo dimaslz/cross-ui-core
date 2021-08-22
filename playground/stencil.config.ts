@@ -4,6 +4,7 @@ import { sass } from '@stencil/sass';
 import autoprefixer from 'autoprefixer';
 
 console.log('process.env.NODE_ENV', process.env.NODE_ENV);
+const isGithub = process.env.ENV === 'github';
 export const config: Config = {
   globalStyle: './src/assets/main.scss',
   taskQueue: 'async',
@@ -12,7 +13,7 @@ export const config: Config = {
       type: 'www',
       // comment the following line to disable service workers in production
       serviceWorker: null,
-      baseUrl: 'https://dimaslz.github.io/cross-ui-core/',
+      baseUrl: isGithub ? 'https://dimaslz.github.io/cross-ui-core/' : '/',
       dir: 'www'
     },
   ],
