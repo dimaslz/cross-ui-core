@@ -8,6 +8,7 @@ const componentClass = 'CrossUIButton';
 })
 export class Button {
   @Element() el: HTMLElement;
+
   @Prop({ mutable: true }) outline: boolean = false;
   @Prop({ mutable: true }) disabled: boolean = false;
   @Prop() color: string = 'primary';
@@ -22,11 +23,23 @@ export class Button {
 
   componentWillLoad() {
     if (!colors.includes(this.color)) {
-      throw new Error(`Color "${this.color}" is not allowed. Please, use one of the following options: ${colors.join(', ')}`);
+      throw new Error(
+        `Color "${
+          this.color
+        }" is not allowed. Please, use one of the following options: ${colors.join(
+          ', ',
+        )}`,
+      );
     }
 
     if (!sizes.includes(this.size)) {
-      throw new Error(`Size "${this.size}" is not allowed. Please, use one of the following options: ${sizes.join(', ')}`);
+      throw new Error(
+        `Size "${
+          this.size
+        }" is not allowed. Please, use one of the following options: ${sizes.join(
+          ', ',
+        )}`,
+      );
     }
   }
 

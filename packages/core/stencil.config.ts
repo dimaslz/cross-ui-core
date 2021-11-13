@@ -30,10 +30,7 @@ export const config: Config = {
       ],
     }),
     postcss({
-      plugins: [
-        require('tailwindcss')('./tailwind.config.js'),
-        autoprefixer(),
-      ]
-    })
+      plugins: [require('tailwindcss')('./tailwind.config.js'), autoprefixer()],
+    }),
   ],
 };

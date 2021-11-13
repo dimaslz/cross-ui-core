@@ -19,6 +19,20 @@ export namespace Components {
         "square": boolean;
         "type": string;
     }
+    interface CrossInputText {
+        "color": string;
+        "cols": number;
+        "disabled": boolean;
+        "hint": string;
+        "label": string;
+        "multiline": boolean;
+        "placeholder": string;
+        "required": boolean;
+        "rows": number;
+        "size": string;
+        "type": string;
+        "value": string;
+    }
 }
 declare global {
     interface HTMLCrossButtonElement extends Components.CrossButton, HTMLStencilElement {
@@ -27,8 +41,15 @@ declare global {
         prototype: HTMLCrossButtonElement;
         new (): HTMLCrossButtonElement;
     };
+    interface HTMLCrossInputTextElement extends Components.CrossInputText, HTMLStencilElement {
+    }
+    var HTMLCrossInputTextElement: {
+        prototype: HTMLCrossInputTextElement;
+        new (): HTMLCrossInputTextElement;
+    };
     interface HTMLElementTagNameMap {
         "cross-button": HTMLCrossButtonElement;
+        "cross-input-text": HTMLCrossInputTextElement;
     }
 }
 declare namespace LocalJSX {
@@ -45,8 +66,23 @@ declare namespace LocalJSX {
         "square"?: boolean;
         "type"?: string;
     }
+    interface CrossInputText {
+        "color"?: string;
+        "cols"?: number;
+        "disabled"?: boolean;
+        "hint"?: string;
+        "label"?: string;
+        "multiline"?: boolean;
+        "placeholder"?: string;
+        "required"?: boolean;
+        "rows"?: number;
+        "size"?: string;
+        "type"?: string;
+        "value"?: string;
+    }
     interface IntrinsicElements {
         "cross-button": CrossButton;
+        "cross-input-text": CrossInputText;
     }
 }
 export { LocalJSX as JSX };
@@ -54,6 +90,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "cross-button": LocalJSX.CrossButton & JSXBase.HTMLAttributes<HTMLCrossButtonElement>;
+            "cross-input-text": LocalJSX.CrossInputText & JSXBase.HTMLAttributes<HTMLCrossInputTextElement>;
         }
     }
 }

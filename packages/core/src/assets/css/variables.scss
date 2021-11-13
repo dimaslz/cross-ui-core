@@ -2,26 +2,29 @@ $colors: 'primary', 'secondary', 'accent', 'danger', 'warning', 'success', 'info
 $colors-map: () !default;
 
 @function darker($color, $percentage) {
-	@return mix(black, $color, $percentage);
+  @return mix(black, $color, $percentage);
 }
 @function lighter($color, $percentage) {
-	@return mix($color, white, $percentage);
+  @return mix($color, white, $percentage);
 }
 
-$color-primary: "blue" !default;
-$color-secondary: "gray" !default;
-$color-accent: "indigo" !default;
-$color-danger: "red" !default;
-$color-warning: "yellow" !default;
-$color-success: "green" !default;
-$color-info: "pink" !default;
+$color-primary: 'blue' !default;
+$color-secondary: 'gray' !default;
+$color-accent: 'indigo' !default;
+$color-danger: 'red' !default;
+$color-warning: 'yellow' !default;
+$color-success: 'green' !default;
+$color-info: 'pink' !default;
 
-$colors-map: map-merge((
-  "primary": $color-primary,
-  "secondary": $color-secondary,
-  "accent": $color-accent,
-  "danger": $color-danger,
-  "warning": $color-warning,
-  "success": $color-success,
-  "info": $color-info,
-), $colors-map);
+$colors-map: map-merge(
+  (
+    'primary': $color-primary,
+    'secondary': $color-secondary,
+    'accent': $color-accent,
+    'danger': $color-danger,
+    'warning': $color-warning,
+    'success': $color-success,
+    'info': $color-info,
+  ),
+  $colors-map
+);
