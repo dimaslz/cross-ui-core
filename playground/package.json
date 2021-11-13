@@ -16,15 +16,15 @@
     "generate": "NODE_ENV=production stencil generate"
   },
   "devDependencies": {
-    "@stencil/core": "^2.6.0",
-    "@stencil/postcss": "^2.0.0",
+    "@stencil/core": "^2.10.0",
+    "@stencil/postcss": "^2.1.0",
     "@stencil/router": "^1.0.1",
-    "@stencil/sass": "^1.4.1",
-    "@types/node": "^15.12.0",
-    "autoprefixer": "^10.2.6",
+    "@stencil/sass": "^1.5.2",
+    "@types/node": "^16.11.7",
+    "autoprefixer": "^10.4.0",
     "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.2",
-    "tailwindcss": "^2.1.4"
+    "tailwindcss": "^2.2.19"
   },
   "license": "MIT",
   "dependencies": {
