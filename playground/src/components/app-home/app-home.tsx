@@ -14,11 +14,11 @@ export class AppHome {
     this.goToWelcomePage = this.goToWelcomePage.bind(this);
   }
 
-  onClick() {
+  private onClick() {
     console.log('onClick');
   }
 
-  goToWelcomePage() {
+  private goToWelcomePage() {
     this.history.push('/welcome');
   }
 
@@ -27,21 +27,39 @@ export class AppHome {
       <div class="Home -mt-16">
         <section class="min-h-screen flex items-center justify-center flex-col relative">
           <div class="flex flex-col items-center justify-center flex-grow">
-            <img src="../../assets/images/logo.svg" class="h-24" alt="CrossUI logo" />
-            <h1 class="my-6 text-2xl">Agnostic components for any framework.</h1>
+            <img
+              src="../../assets/images/logo.svg"
+              class="h-24"
+              alt="CrossUI logo"
+            />
+            <h1 class="my-6 text-2xl">
+              Agnostic components for any framework.
+            </h1>
 
             <div class="flex mt-2">
               <div class="mx-2">
-                <img src="../../assets/images/cross-ui-logo-angular-hover.svg" class="h-12" />
+                <img
+                  src="../../assets/images/cross-ui-logo-angular-hover.svg"
+                  class="h-12"
+                />
               </div>
               <div class="mx-2">
-                <img src="../../assets/images/cross-ui-logo-vue-hover.svg" class="h-12" />
+                <img
+                  src="../../assets/images/cross-ui-logo-vue-hover.svg"
+                  class="h-12"
+                />
               </div>
               <div class="mx-2">
-                <img src="../../assets/images/cross-ui-logo-react-hover.svg" class="h-12" />
+                <img
+                  src="../../assets/images/cross-ui-logo-react-hover.svg"
+                  class="h-12"
+                />
               </div>
             </div>
-            <div class="w-12 h-12 flex items-end justify-center absolute bottom-0 mb-12 cursor-pointer hover:opacity-50" onClick={this.goToWelcomePage}>
+            <div
+              class="w-12 h-12 flex items-end justify-center absolute bottom-0 mb-12 cursor-pointer hover:opacity-50"
+              onClick={this.goToWelcomePage}
+            >
               <svg
                 class="animate-bounce w-6 h-6 text-gray-900"
                 fill="none"
@@ -63,7 +81,11 @@ export class AppHome {
           <div class="Content w-full p-4">
             <stencil-router>
               <stencil-route-switch scrollTopOffset={0}>
-                <stencil-route url="/" component="app-introduction" exact={true} />
+                <stencil-route
+                  url="/"
+                  component="app-introduction"
+                  exact={true}
+                />
               </stencil-route-switch>
             </stencil-router>
           </div>

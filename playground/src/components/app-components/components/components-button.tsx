@@ -3,7 +3,15 @@ import { Component, h, State } from '@stencil/core';
 import { colors } from '../../../../../packages/core/src/constants';
 
 const IconDemoComponent = () => (
-  <svg width="24" height="24" color="white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <svg
+    width="24"
+    height="24"
+    color="white"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
     <path fill="none" d="M12 14l9-5-9-5-9 5 9 5z" />
     <path
       fill="none"
@@ -34,23 +42,23 @@ export class ComponentsButton {
     this.outlineToggle = this.outlineToggle.bind(this);
   }
 
-  disableToggle() {
+  private disableToggle() {
     this.disabled = !this.disabled;
   }
 
-  outlineToggle() {
+  private outlineToggle() {
     this.outline = !this.outline;
   }
 
-  onClick($event) {
+  private onClick($event) {
     console.log('onClick', $event);
   }
 
-  onBlur($event) {
+  private onBlur($event) {
     console.log('onBlur', $event);
   }
 
-  onFocus($event) {
+  private onFocus($event) {
     console.log('onFocus', $event);
   }
 
@@ -66,11 +74,27 @@ export class ComponentsButton {
           <h3 class="text-2xl mb-2 bg-gray-100 px-2">Basic </h3>
           <div class="px-4 text-center">
             <div>
-              <cross-button onClick={this.disableToggle} class="mx-1" active={this.disabled}>
-                {this.disabled ? <span>enable buttons</span> : <span>disable buttons</span>}
+              <cross-button
+                onClick={this.disableToggle}
+                class="mx-1"
+                active={this.disabled}
+              >
+                {this.disabled ? (
+                  <span>enable buttons</span>
+                ) : (
+                  <span>disable buttons</span>
+                )}
               </cross-button>
-              <cross-button onClick={this.outlineToggle} class="mx-1" active={this.outline}>
-                {this.outline ? <span>set outline buttons</span> : <span>set default buttons</span>}
+              <cross-button
+                onClick={this.outlineToggle}
+                class="mx-1"
+                active={this.outline}
+              >
+                {this.outline ? (
+                  <span>set outline buttons</span>
+                ) : (
+                  <span>set default buttons</span>
+                )}
               </cross-button>
             </div>
 
@@ -81,43 +105,45 @@ export class ComponentsButton {
                 <div class="w-64 text-center">large</div>
               </div>
               {colors.map(color => {
-                return <div class="flex w-full justify-center items-center mt-2">
-                <div class="w-64 text-center">
-                  <cross-button
-                    onClick={this.onClick}
-                    onBlur={this.onBlur}
-                    size="small"
-                    color={color}
-                    disabled={this.disabled}
-                    outline={this.outline}
-                  >
-                    {color}
-                  </cross-button>
-                </div>
-                <div class="w-64 text-center">
-                  <cross-button
-                    onClick={this.onClick}
-                    onBlur={this.onBlur}
-                    color={color}
-                    disabled={this.disabled}
-                    outline={this.outline}
-                  >
-                    {color}
-                  </cross-button>
-                </div>
-                <div class="w-64 text-center">
-                  <cross-button
-                    onClick={this.onClick}
-                    onBlur={this.onBlur}
-                    size="large"
-                    color={color}
-                    disabled={this.disabled}
-                    outline={this.outline}
-                  >
-                    {color}
-                  </cross-button>
-                </div>
-              </div>
+                return (
+                  <div class="flex w-full justify-center items-center mt-2">
+                    <div class="w-64 text-center">
+                      <cross-button
+                        onClick={this.onClick}
+                        onBlur={this.onBlur}
+                        size="small"
+                        color={color}
+                        disabled={this.disabled}
+                        outline={this.outline}
+                      >
+                        {color}
+                      </cross-button>
+                    </div>
+                    <div class="w-64 text-center">
+                      <cross-button
+                        onClick={this.onClick}
+                        onBlur={this.onBlur}
+                        color={color}
+                        disabled={this.disabled}
+                        outline={this.outline}
+                      >
+                        {color}
+                      </cross-button>
+                    </div>
+                    <div class="w-64 text-center">
+                      <cross-button
+                        onClick={this.onClick}
+                        onBlur={this.onBlur}
+                        size="large"
+                        color={color}
+                        disabled={this.disabled}
+                        outline={this.outline}
+                      >
+                        {color}
+                      </cross-button>
+                    </div>
+                  </div>
+                );
               })}
             </div>
           </div>
@@ -128,10 +154,18 @@ export class ComponentsButton {
           <div class="px-4 text-center">
             <div>
               <cross-button onClick={this.disableToggle} class="mx-1">
-                {this.disabled ? <span>enable buttons</span> : <span>disable buttons</span>}
+                {this.disabled ? (
+                  <span>enable buttons</span>
+                ) : (
+                  <span>disable buttons</span>
+                )}
               </cross-button>
               <cross-button onClick={this.outlineToggle} class="mx-1">
-                {this.outline ? <span>set outline buttons</span> : <span>set default buttons</span>}
+                {this.outline ? (
+                  <span>set outline buttons</span>
+                ) : (
+                  <span>set default buttons</span>
+                )}
               </cross-button>
             </div>
 
@@ -142,26 +176,47 @@ export class ComponentsButton {
                 <div class="w-64 text-center">large</div>
               </div>
               {colors.map(color => {
-                return <div class="flex w-full justify-center items-center mt-2">
-                <div class="w-64 text-center">
-                  <cross-button onClick={this.onClick} onBlur={this.onClick} size="small" pill color={color} disabled={this.disabled}
-                      outline={this.outline}>
-                    my button
-                  </cross-button>
-                </div>
-                <div class="w-64 text-center">
-                  <cross-button onClick={this.onClick} onBlur={this.onBlur} pill color={color} disabled={this.disabled}
-                      outline={this.outline}>
-                    my button
-                  </cross-button>
-                </div>
-                <div class="w-64 text-center">
-                  <cross-button onClick={this.onClick} size="large" pill color={color} disabled={this.disabled}
-                      outline={this.outline}>
-                    my button
-                  </cross-button>
-                </div>
-              </div>
+                return (
+                  <div class="flex w-full justify-center items-center mt-2">
+                    <div class="w-64 text-center">
+                      <cross-button
+                        onClick={this.onClick}
+                        onBlur={this.onClick}
+                        size="small"
+                        pill
+                        color={color}
+                        disabled={this.disabled}
+                        outline={this.outline}
+                      >
+                        my button
+                      </cross-button>
+                    </div>
+                    <div class="w-64 text-center">
+                      <cross-button
+                        onClick={this.onClick}
+                        onBlur={this.onBlur}
+                        pill
+                        color={color}
+                        disabled={this.disabled}
+                        outline={this.outline}
+                      >
+                        my button
+                      </cross-button>
+                    </div>
+                    <div class="w-64 text-center">
+                      <cross-button
+                        onClick={this.onClick}
+                        size="large"
+                        pill
+                        color={color}
+                        disabled={this.disabled}
+                        outline={this.outline}
+                      >
+                        my button
+                      </cross-button>
+                    </div>
+                  </div>
+                );
               })}
             </div>
           </div>
@@ -172,10 +227,18 @@ export class ComponentsButton {
           <div class="px-4 text-center">
             <div>
               <cross-button onClick={this.disableToggle} class="mx-1">
-                {this.disabled ? <span>enable buttons</span> : <span>disable buttons</span>}
+                {this.disabled ? (
+                  <span>enable buttons</span>
+                ) : (
+                  <span>disable buttons</span>
+                )}
               </cross-button>
               <cross-button onClick={this.outlineToggle} class="mx-1">
-                {this.outline ? <span>set outline buttons</span> : <span>set default buttons</span>}
+                {this.outline ? (
+                  <span>set outline buttons</span>
+                ) : (
+                  <span>set default buttons</span>
+                )}
               </cross-button>
             </div>
 
@@ -186,26 +249,48 @@ export class ComponentsButton {
                 <div class="w-20 text-center">large</div>
               </div>
               {colors.map(color => {
-              return <div class="flex justify-center items-center mt-2">
-                <div class="w-20 text-center">
-                  <cross-button onClick={this.onClick} onBlur={this.onBlur} circle size="small" color={color} disabled={this.disabled}
-                      outline={this.outline}>
-                    <IconDemoComponent></IconDemoComponent>
-                  </cross-button>
-                </div>
-                <div class="w-20 text-center">
-                  <cross-button onClick={this.onClick} onBlur={this.onBlur} circle color={color} disabled={this.disabled}
-                      outline={this.outline}>
-                    <IconDemoComponent></IconDemoComponent>
-                  </cross-button>
-                </div>
-                <div class="w-20 text-center">
-                  <cross-button onClick={this.onClick} onBlur={this.onBlur} circle size="large" color={color} disabled={this.disabled}
-                      outline={this.outline}>
-                  <IconDemoComponent></IconDemoComponent>
-                  </cross-button>
-                </div>
-              </div>
+                return (
+                  <div class="flex justify-center items-center mt-2">
+                    <div class="w-20 text-center">
+                      <cross-button
+                        onClick={this.onClick}
+                        onBlur={this.onBlur}
+                        circle
+                        size="small"
+                        color={color}
+                        disabled={this.disabled}
+                        outline={this.outline}
+                      >
+                        <IconDemoComponent></IconDemoComponent>
+                      </cross-button>
+                    </div>
+                    <div class="w-20 text-center">
+                      <cross-button
+                        onClick={this.onClick}
+                        onBlur={this.onBlur}
+                        circle
+                        color={color}
+                        disabled={this.disabled}
+                        outline={this.outline}
+                      >
+                        <IconDemoComponent></IconDemoComponent>
+                      </cross-button>
+                    </div>
+                    <div class="w-20 text-center">
+                      <cross-button
+                        onClick={this.onClick}
+                        onBlur={this.onBlur}
+                        circle
+                        size="large"
+                        color={color}
+                        disabled={this.disabled}
+                        outline={this.outline}
+                      >
+                        <IconDemoComponent></IconDemoComponent>
+                      </cross-button>
+                    </div>
+                  </div>
+                );
               })}
             </div>
           </div>
@@ -216,10 +301,18 @@ export class ComponentsButton {
           <div class="px-4 text-center">
             <div>
               <cross-button onClick={this.disableToggle} class="mx-1">
-                {this.disabled ? <span>enable buttons</span> : <span>disable buttons</span>}
+                {this.disabled ? (
+                  <span>enable buttons</span>
+                ) : (
+                  <span>disable buttons</span>
+                )}
               </cross-button>
               <cross-button onClick={this.outlineToggle} class="mx-1">
-                {this.outline ? <span>set outline buttons</span> : <span>set default buttons</span>}
+                {this.outline ? (
+                  <span>set outline buttons</span>
+                ) : (
+                  <span>set default buttons</span>
+                )}
               </cross-button>
             </div>
 
@@ -230,26 +323,48 @@ export class ComponentsButton {
                 <div class="w-20 text-center">large</div>
               </div>
               {colors.map(color => {
-              return <div class="flex justify-center items-center mt-2">
-                <div class="w-20 text-center">
-                  <cross-button onClick={this.onClick} onBlur={this.onBlur} square size="small" color={color} disabled={this.disabled}
-                      outline={this.outline}>
-                    <IconDemoComponent></IconDemoComponent>
-                  </cross-button>
-                </div>
-                <div class="w-20 text-center">
-                  <cross-button onClick={this.onClick} onBlur={this.onBlur} square color={color} disabled={this.disabled}
-                      outline={this.outline}>
-                    <IconDemoComponent></IconDemoComponent>
-                  </cross-button>
-                </div>
-                <div class="w-20 text-center">
-                  <cross-button onClick={this.onClick} onBlur={this.onBlur} square size="large" color={color} disabled={this.disabled}
-                      outline={this.outline}>
-                  <IconDemoComponent></IconDemoComponent>
-                  </cross-button>
-                </div>
-              </div>
+                return (
+                  <div class="flex justify-center items-center mt-2">
+                    <div class="w-20 text-center">
+                      <cross-button
+                        onClick={this.onClick}
+                        onBlur={this.onBlur}
+                        square
+                        size="small"
+                        color={color}
+                        disabled={this.disabled}
+                        outline={this.outline}
+                      >
+                        <IconDemoComponent></IconDemoComponent>
+                      </cross-button>
+                    </div>
+                    <div class="w-20 text-center">
+                      <cross-button
+                        onClick={this.onClick}
+                        onBlur={this.onBlur}
+                        square
+                        color={color}
+                        disabled={this.disabled}
+                        outline={this.outline}
+                      >
+                        <IconDemoComponent></IconDemoComponent>
+                      </cross-button>
+                    </div>
+                    <div class="w-20 text-center">
+                      <cross-button
+                        onClick={this.onClick}
+                        onBlur={this.onBlur}
+                        square
+                        size="large"
+                        color={color}
+                        disabled={this.disabled}
+                        outline={this.outline}
+                      >
+                        <IconDemoComponent></IconDemoComponent>
+                      </cross-button>
+                    </div>
+                  </div>
+                );
               })}
             </div>
           </div>
@@ -268,7 +383,9 @@ export class ComponentsButton {
             <div class="flex my-1">
               <div class="w-1/5 p-1">color</div>
               <div class="w-1/5 p-1">
-                <span class="bg-gray-200 text-gray-700 px-1 rounded">string</span>
+                <span class="bg-gray-200 text-gray-700 px-1 rounded">
+                  string
+                </span>
               </div>
               <div class="w-1/5 p-1">
                 <span class="bg-gray-200 text-gray-700 px-1 rounded">blue</span>
@@ -278,50 +395,70 @@ export class ComponentsButton {
             <div class="flex my-1">
               <div class="w-1/4 p-1">circle</div>
               <div class="w-1/4 p-1">
-                <span class="bg-gray-200 text-gray-700 px-1 rounded">boolean</span>
+                <span class="bg-gray-200 text-gray-700 px-1 rounded">
+                  boolean
+                </span>
               </div>
               <div class="w-1/4 p-1">
-                <span class="bg-gray-200 text-gray-700 px-1 rounded">false</span>
+                <span class="bg-gray-200 text-gray-700 px-1 rounded">
+                  false
+                </span>
               </div>
               <div class="w-2/4 p-1">wip...</div>
             </div>
             <div class="flex my-1">
               <div class="w-1/4 p-1">square</div>
               <div class="w-1/4 p-1">
-                <span class="bg-gray-200 text-gray-700 px-1 rounded">boolean</span>
+                <span class="bg-gray-200 text-gray-700 px-1 rounded">
+                  boolean
+                </span>
               </div>
               <div class="w-1/4 p-1">
-                <span class="bg-gray-200 text-gray-700 px-1 rounded">false</span>
+                <span class="bg-gray-200 text-gray-700 px-1 rounded">
+                  false
+                </span>
               </div>
               <div class="w-2/4 p-1">wip...</div>
             </div>
             <div class="flex my-1">
               <div class="w-1/4 p-1">pill</div>
               <div class="w-1/4 p-1">
-                <span class="bg-gray-200 text-gray-700 px-1 rounded">boolean</span>
+                <span class="bg-gray-200 text-gray-700 px-1 rounded">
+                  boolean
+                </span>
               </div>
               <div class="w-1/4 p-1">
-                <span class="bg-gray-200 text-gray-700 px-1 rounded">false</span>
+                <span class="bg-gray-200 text-gray-700 px-1 rounded">
+                  false
+                </span>
               </div>
               <div class="w-2/4 p-1">wip...</div>
             </div>
             <div class="flex my-1">
               <div class="w-1/4 p-1">ui</div>
               <div class="w-1/4 p-1">
-                <span class="bg-gray-200 text-gray-700 px-1 rounded">string</span>
+                <span class="bg-gray-200 text-gray-700 px-1 rounded">
+                  string
+                </span>
               </div>
               <div class="w-1/4 p-1">
-                <span class="bg-gray-200 text-gray-700 px-1 rounded">simple</span>
+                <span class="bg-gray-200 text-gray-700 px-1 rounded">
+                  simple
+                </span>
               </div>
               <div class="w-2/4 p-1">wip...</div>
             </div>
             <div class="flex my-1">
               <div class="w-1/4 p-1">disabled</div>
               <div class="w-1/4 p-1">
-                <span class="bg-gray-200 text-gray-700 px-1 rounded">boolean</span>
+                <span class="bg-gray-200 text-gray-700 px-1 rounded">
+                  boolean
+                </span>
               </div>
               <div class="w-1/4 p-1">
-                <span class="bg-gray-200 text-gray-700 px-1 rounded">false</span>
+                <span class="bg-gray-200 text-gray-700 px-1 rounded">
+                  false
+                </span>
               </div>
               <div class="w-2/4 p-1">wip...</div>
             </div>

@@ -9,18 +9,22 @@ import { MatchResults } from '@stencil/router';
 export class AppProfile {
   @Prop() match: MatchResults;
 
-  normalize(name: string): string {
-    if (name) {
+  private normalize(name: string): string {
+    if (Boolean(name)) {
       return name.substr(0, 1).toUpperCase() + name.substr(1).toLowerCase();
     }
+
     return '';
   }
 
   render() {
-    if (this.match && this.match.params.name) {
+    if (Boolean(this.match && this.match.params.name)) {
       return (
         <div class="app-profile">
-          <p>Hello! My name is {this.normalize(this.match.params.name)}. My name was passed in through a route param!</p>
+          <p>
+            Hello! My name is {this.normalize(this.match.params.name)}. My name
+            was passed in through a route param!
+          </p>
         </div>
       );
     }
