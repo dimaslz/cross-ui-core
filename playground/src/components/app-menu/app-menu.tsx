@@ -42,6 +42,11 @@ export class AppMenu {
                       Button
                     </stencil-route-link>
                   </li>
+                  <li>
+                    <stencil-route-link url="/components/input-text" class="hover:text-green-500">
+                      InputText
+                    </stencil-route-link>
+                  </li>
                 </ul>
               </ul>
             </li>

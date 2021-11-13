@@ -39,6 +39,8 @@ export namespace Components {
     }
     interface ComponentsButton {
     }
+    interface ComponentsInputText {
+    }
     interface CrossButton {
         "active": boolean;
         "circle": boolean;
@@ -51,6 +53,20 @@ export namespace Components {
         "size": string;
         "square": boolean;
         "type": string;
+    }
+    interface CrossInputText {
+        "color": string;
+        "cols": number;
+        "disabled": boolean;
+        "hint": string;
+        "label": string;
+        "multiline": boolean;
+        "placeholder": string;
+        "required": boolean;
+        "rows": number;
+        "size": string;
+        "type": string;
+        "value": string;
     }
 }
 declare global {
@@ -144,11 +160,23 @@ declare global {
         prototype: HTMLComponentsButtonElement;
         new (): HTMLComponentsButtonElement;
     };
+    interface HTMLComponentsInputTextElement extends Components.ComponentsInputText, HTMLStencilElement {
+    }
+    var HTMLComponentsInputTextElement: {
+        prototype: HTMLComponentsInputTextElement;
+        new (): HTMLComponentsInputTextElement;
+    };
     interface HTMLCrossButtonElement extends Components.CrossButton, HTMLStencilElement {
     }
     var HTMLCrossButtonElement: {
         prototype: HTMLCrossButtonElement;
         new (): HTMLCrossButtonElement;
+    };
+    interface HTMLCrossInputTextElement extends Components.CrossInputText, HTMLStencilElement {
+    }
+    var HTMLCrossInputTextElement: {
+        prototype: HTMLCrossInputTextElement;
+        new (): HTMLCrossInputTextElement;
     };
     interface HTMLElementTagNameMap {
         "app-404": HTMLApp404Element;
@@ -166,7 +194,9 @@ declare global {
         "app-welcome": HTMLAppWelcomeElement;
         "app-why": HTMLAppWhyElement;
         "components-button": HTMLComponentsButtonElement;
+        "components-input-text": HTMLComponentsInputTextElement;
         "cross-button": HTMLCrossButtonElement;
+        "cross-input-text": HTMLCrossInputTextElement;
     }
 }
 declare namespace LocalJSX {
@@ -202,6 +232,8 @@ declare namespace LocalJSX {
     }
     interface ComponentsButton {
     }
+    interface ComponentsInputText {
+    }
     interface CrossButton {
         "active"?: boolean;
         "circle"?: boolean;
@@ -214,6 +246,20 @@ declare namespace LocalJSX {
         "size"?: string;
         "square"?: boolean;
         "type"?: string;
+    }
+    interface CrossInputText {
+        "color"?: string;
+        "cols"?: number;
+        "disabled"?: boolean;
+        "hint"?: string;
+        "label"?: string;
+        "multiline"?: boolean;
+        "placeholder"?: string;
+        "required"?: boolean;
+        "rows"?: number;
+        "size"?: string;
+        "type"?: string;
+        "value"?: string;
     }
     interface IntrinsicElements {
         "app-404": App404;
@@ -231,7 +277,9 @@ declare namespace LocalJSX {
         "app-welcome": AppWelcome;
         "app-why": AppWhy;
         "components-button": ComponentsButton;
+        "components-input-text": ComponentsInputText;
         "cross-button": CrossButton;
+        "cross-input-text": CrossInputText;
     }
 }
 export { LocalJSX as JSX };
@@ -253,7 +301,9 @@ declare module "@stencil/core" {
             "app-welcome": LocalJSX.AppWelcome & JSXBase.HTMLAttributes<HTMLAppWelcomeElement>;
             "app-why": LocalJSX.AppWhy & JSXBase.HTMLAttributes<HTMLAppWhyElement>;
             "components-button": LocalJSX.ComponentsButton & JSXBase.HTMLAttributes<HTMLComponentsButtonElement>;
+            "components-input-text": LocalJSX.ComponentsInputText & JSXBase.HTMLAttributes<HTMLComponentsInputTextElement>;
             "cross-button": LocalJSX.CrossButton & JSXBase.HTMLAttributes<HTMLCrossButtonElement>;
+            "cross-input-text": LocalJSX.CrossInputText & JSXBase.HTMLAttributes<HTMLCrossInputTextElement>;
         }
     }
 }
