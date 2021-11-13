@@ -1,0 +1,71 @@
+.CrossUIInputText {
+  @apply text-gray-600 bg-transparent block;
+  label {
+    @apply flex w-full;
+  }
+
+  @each $color in $colors {
+    &.#{$color} {
+      $color-value: map-get($colors-map, $color);
+
+      input,
+      textarea {
+        @apply w-full flex border outline-none rounded-sm;
+
+        &:focus {
+          @apply border-opacity-50 border-#{$color-value}-500;
+        }
+      }
+
+      &.small {
+        @apply text-xs;
+        input,
+        textarea {
+          @apply px-2 py-1;
+        }
+      }
+
+      &.medium {
+        @apply text-sm;
+        input,
+        textarea {
+          @apply px-2 py-2;
+        }
+      }
+
+      &.large {
+        @apply text-sm;
+        input,
+        textarea {
+          @apply px-2 py-3;
+        }
+      }
+    }
+  }
+
+  &__hint,
+  &__error {
+    @apply text-xs py-1;
+  }
+
+  &__error {
+    @apply text-red-400;
+  }
+
+  &__hint {
+    @apply text-gray-400;
+  }
+
+  input:disabled {
+    @apply opacity-50 cursor-not-allowed text-opacity-50 bg-gray-100;
+  }
+
+  input:placeholder,
+  textarea:placeholder {
+    @apply placeholder-gray-300;
+  }
+
+  &.full-width {
+    @apply w-full;
+  }
+}
