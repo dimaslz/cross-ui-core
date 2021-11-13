@@ -73,17 +73,13 @@ export class Button {
       this.outline ? 'outline' : 'default',
       this.circle ? 'circle' : '',
       this.square ? 'square' : '',
-      (this.active || this.selected) ? 'active' : '',
+      this.active || this.selected ? 'active' : '',
       this.fullWidth ? `full-width` : '',
       extraClasses,
     ].join(' ');
 
     return (
-      <button
-        class={`${style}`}
-        type={this.type}
-        disabled={this.disabled}
-      >
+      <button class={`${style}`} type={this.type} disabled={this.disabled}>
         <slot></slot>
       </button>
     );
