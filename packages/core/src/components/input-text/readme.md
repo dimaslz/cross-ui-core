@@ -13,6 +13,7 @@
 | `cols`        | `cols`        |             | `number`  | `null`      |
 | `disabled`    | `disabled`    |             | `boolean` | `false`     |
 | `hint`        | `hint`        |             | `string`  | `''`        |
+| `id`          | `id`          |             | `string`  | `''`        |
 | `label`       | `label`       |             | `string`  | `''`        |
 | `multiline`   | `multiline`   |             | `boolean` | `false`     |
 | `placeholder` | `placeholder` |             | `string`  | `''`        |

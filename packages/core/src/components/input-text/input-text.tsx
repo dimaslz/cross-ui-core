@@ -117,9 +117,9 @@ export class InputText {
             disabled={this.disabled}
             placeholder={this.placeholder}
             class={this.error ? 'border-red-300' : ''}
-            id="input"
             cols={this.cols}
             rows={this.rows}
+            id={this.el.id}
           ></textarea>
         ) : (
           <input
@@ -128,7 +128,7 @@ export class InputText {
             disabled={this.disabled}
             placeholder={this.placeholder}
             class={this.error ? 'border-red-300' : ''}
-            id="input"
+            id={this.el.id}
           />
         )}
         {this.error && (
