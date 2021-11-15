@@ -92,7 +92,12 @@ export class Button {
     ].join(' ');
 
     return (
-      <button class={`${style}`} type={this.type} disabled={this.disabled}>
+      <button
+        class={`${style}`}
+        type={this.type}
+        disabled={this.disabled}
+        id={this.el.id}
+      >
         <slot></slot>
       </button>
     );
