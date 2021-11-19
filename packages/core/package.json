@@ -39,7 +39,7 @@
     "@stencil/sass": "^1.5.2",
     "@testing-library/dom": "^8.11.1",
     "@testing-library/jest-dom": "^5.15.0",
-    "@types/jest": "^26.0.24",
+    "@types/jest": "^27.0.3",
     "@types/shelljs": "^0.8.9",
     "@typescript-eslint/eslint-plugin": "^5.3.1",
     "@typescript-eslint/parser": "^5.3.1",
