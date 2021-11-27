@@ -1,55 +1,58 @@
+$prefix: 'cross_ui__';
+
 .CrossUIButton {
   @apply cursor-pointer border-solid border font-sans flex justify-center;
 
   @each $color in $colors {
-    &.#{$color} {
+    &.#{$prefix}#{$color} {
       $color-value: map-get($colors-map, $color);
 
       @apply inline-flex items-center antialiased border-transparent leading-none text-sm px-4 bg-#{$color-value}-500 text-white font-semibold;
       @apply text-xs px-4;
 
-      &.pill,
-      &.circle {
+      &.#{$prefix}pill,
+      &.#{$prefix}circle {
         @apply rounded-full;
       }
 
-      &.circle,
-      &.square {
+      &.#{$prefix}circle,
+      &.#{$prefix}square {
         @apply items-center justify-center p-1;
       }
 
       // SIZES
-      &.small {
+      &.#{$prefix}small {
         @apply h-6 text-xs;
 
-        &.circle,
-        &.square {
+        &.#{$prefix}circle,
+        &.#{$prefix}square {
           @apply w-6;
         }
       }
 
-      &.medium {
+      &.#{$prefix}medium {
         @apply h-8 text-sm;
 
-        &.circle,
-        &.square {
+        &.#{$prefix}circle,
+        &.#{$prefix}square {
           @apply w-8;
         }
       }
 
-      &.large {
+      &.#{$prefix}large {
         @apply h-10 text-base;
 
-        &.circle,
-        &.square {
+        &.#{$prefix}circle,
+        &.#{$prefix}square {
           @apply w-10;
         }
       }
 
-      &.default {
+      &.#{$prefix}default {
         @apply bg-#{$color-value}-500;
 
-        &:hover:not(:disabled), &.active {
+        &:hover:not(:disabled),
+        &.#{$prefix}active {
           @apply bg-#{$color-value}-600;
         }
 
@@ -58,14 +61,15 @@
         }
       }
 
-      &.outline {
+      &.#{$prefix}outline {
         @apply bg-transparent text-#{$color-value}-700 font-semibold border border-#{$color-value}-700;
 
         svg {
           @apply text-#{$color-value}-700;
         }
 
-        &:hover:not(:disabled), &.active {
+        &:hover:not(:disabled),
+        &.#{$prefix}active {
           @apply border-#{$color-value}-400 text-#{$color-value}-400 border-transparent;
         }
 
@@ -74,8 +78,8 @@
         }
       }
 
-      &.default,
-      &.outline {
+      &.#{$prefix}default,
+      &.#{$prefix}outline {
         &:focus {
           z-index: 1;
           @apply outline-none ring ring-gray-200 relative;
@@ -88,7 +92,7 @@
     }
   }
 
-  &.full-width {
+  &.#{$prefix}full-width {
     @apply w-full;
   }
 }

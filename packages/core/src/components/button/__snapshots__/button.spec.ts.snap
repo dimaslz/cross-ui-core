@@ -3,7 +3,7 @@
 exports[`cross-button Snapshot 1`] = `
 <cross-button>
   <!---->
-  <button class="CrossUIButton default medium primary" type="button">
+  <button class="CrossUIButton cross_ui__default cross_ui__medium cross_ui__primary" type="button">
     Click me!
   </button>
 </cross-button>

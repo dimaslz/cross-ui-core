@@ -1,5 +1,6 @@
 import { Component, h, Prop, Element, Listen } from '@stencil/core';
-import { colors, sizes } from '../../constants';
+import { COLOR, colors, SIZE, sizes } from '../../constants';
+import { TYPE } from './button.constant';
 
 const componentClass = 'CrossUIButton';
 
@@ -11,20 +12,20 @@ export class Button {
 
   @Prop({ mutable: true }) outline: boolean = false;
   @Prop({ mutable: true }) disabled: boolean = false;
-  @Prop() color: string = 'primary';
-  @Prop() size: string = 'medium';
+  @Prop() color: string = COLOR.PRIMARY;
+  @Prop() size: string = SIZE.MEDIUM;
   @Prop() circle: boolean = false;
   @Prop() square: boolean = false;
   @Prop() pill: boolean = false;
   @Prop() active: boolean = false;
   @Prop() fullWidth: boolean = false;
   @Prop() selected: boolean = false;
-  @Prop() type: string = 'button';
+  @Prop() type: string = TYPE.BUTTON;
 
   componentWillLoad() {
     if (!colors.includes(this.color)) {
       throw new Error(
-        `Color "${
+        `[CROSS-UI]: Color "${
           this.color
         }" is not allowed. Please, use one of the following options: ${colors.join(
           ', ',
@@ -34,7 +35,7 @@ export class Button {
 
     if (!sizes.includes(this.size)) {
       throw new Error(
-        `Size "${
+        `[CROSS-UI]: Size "${
           this.size
         }" is not allowed. Please, use one of the following options: ${sizes.join(
           ', ',
@@ -80,14 +81,14 @@ export class Button {
       .join(' ');
     const style: string = [
       componentClass,
-      this.pill ? 'pill' : '',
-      this.color,
-      this.size,
-      this.outline ? 'outline' : 'default',
-      this.circle ? 'circle' : '',
-      this.square ? 'square' : '',
-      this.active || this.selected ? 'active' : '',
-      this.fullWidth ? `full-width` : '',
+      this.pill ? 'cross_ui__pill' : '',
+      `cross_ui__${this.color}`,
+      `cross_ui__${this.size}`,
+      this.outline ? 'cross_ui__outline' : 'cross_ui__default',
+      this.circle ? 'cross_ui__circle' : '',
+      this.square ? 'cross_ui__square' : '',
+      this.active || this.selected ? 'cross_ui__active' : '',
+      this.fullWidth ? `cross_ui__full-width` : '',
       extraClasses,
     ].join(' ');
 
