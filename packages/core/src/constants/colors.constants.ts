@@ -8,4 +8,4 @@ export enum COLOR {
   INFO = 'info',
 }
 
-export const colors: string[] = Object.values(COLOR);
+export const COLORS: string[] = Object.values(COLOR);

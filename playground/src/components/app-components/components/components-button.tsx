@@ -1,6 +1,6 @@
 import { Component, h, State } from '@stencil/core';
 
-import { colors } from '../../../../../packages/core/src/constants';
+import { COLORS } from '../../../../../packages/core/src/constants';
 
 const IconDemoComponent = () => (
   <svg
@@ -104,7 +104,7 @@ export class ComponentsButton {
                 <div class="w-64 text-center">medium</div>
                 <div class="w-64 text-center">large</div>
               </div>
-              {colors.map(color => {
+              {COLORS.map(color => {
                 return (
                   <div class="flex w-full justify-center items-center mt-2">
                     <div class="w-64 text-center">
@@ -175,7 +175,7 @@ export class ComponentsButton {
                 <div class="w-64 text-center">medium</div>
                 <div class="w-64 text-center">large</div>
               </div>
-              {colors.map(color => {
+              {COLORS.map(color => {
                 return (
                   <div class="flex w-full justify-center items-center mt-2">
                     <div class="w-64 text-center">
@@ -248,7 +248,7 @@ export class ComponentsButton {
                 <div class="w-20 text-center">medium</div>
                 <div class="w-20 text-center">large</div>
               </div>
-              {colors.map(color => {
+              {COLORS.map(color => {
                 return (
                   <div class="flex justify-center items-center mt-2">
                     <div class="w-20 text-center">
@@ -322,7 +322,7 @@ export class ComponentsButton {
                 <div class="w-20 text-center">medium</div>
                 <div class="w-20 text-center">large</div>
               </div>
-              {colors.map(color => {
+              {COLORS.map(color => {
                 return (
                   <div class="flex justify-center items-center mt-2">
                     <div class="w-20 text-center">

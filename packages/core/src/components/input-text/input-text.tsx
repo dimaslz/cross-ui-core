@@ -7,7 +7,7 @@ import {
   Element,
   State,
 } from '@stencil/core';
-import { COLOR, colors, SIZE, sizes } from '../../constants';
+import { COLOR, COLORS, SIZE, SIZES } from '../../constants';
 import { TYPE } from './input-text.constant';
 
 const componentClass = 'CrossUIInputText';
@@ -41,21 +41,21 @@ export class InputText {
       );
     }
 
-    if (!colors.includes(this.color)) {
+    if (!COLORS.includes(this.color)) {
       throw new Error(
         `[CROSS-UI]: Color "${
           this.color
-        }" is not allowed. Please, use one of the following options: ${colors.join(
+        }" is not allowed. Please, use one of the following options: ${COLORS.join(
           ', ',
         )}`,
       );
     }
 
-    if (!sizes.includes(this.size)) {
+    if (!SIZES.includes(this.size)) {
       throw new Error(
         `[CROSS-UI]: Size "${
           this.size
-        }" is not allowed. Please, use one of the following options: ${sizes.join(
+        }" is not allowed. Please, use one of the following options: ${SIZES.join(
           ', ',
         )}`,
       );

@@ -1,2 +1,2 @@
-export { COLOR, colors } from './colors.constants';
-export { SIZE, sizes } from './sizes.constants';
+export { COLOR, COLORS } from './colors.constants';
+export { SIZE, SIZES } from './sizes.constants';

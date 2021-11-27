@@ -96,6 +96,7 @@ export class ComponentsInputText {
             label="Label text"
             value="this is the content"
             multiline={true}
+            rows={5}
           ></cross-input-text>
         </div>
         <div class="mb-8">

@@ -4,4 +4,4 @@ export enum SIZE {
   LARGE = 'large',
 }
 
-export const sizes: string[] = Object.values(SIZE);
+export const SIZES: string[] = Object.values(SIZE);
