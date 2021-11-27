@@ -1,3 +1,5 @@
+$prefix: 'cross_ui__';
+
 .CrossUIInputText {
   @apply text-gray-600 bg-transparent block;
   label {
@@ -5,7 +7,7 @@
   }
 
   @each $color in $colors {
-    &.#{$color} {
+    &.#{$prefix}#{$color} {
       $color-value: map-get($colors-map, $color);
 
       input,
@@ -17,7 +19,7 @@
         }
       }
 
-      &.small {
+      &.#{$prefix}small {
         @apply text-xs;
         input,
         textarea {
@@ -25,7 +27,7 @@
         }
       }
 
-      &.medium {
+      &.#{$prefix}medium {
         @apply text-sm;
         input,
         textarea {
@@ -33,7 +35,7 @@
         }
       }
 
-      &.large {
+      &.#{$prefix}large {
         @apply text-sm;
         input,
         textarea {
@@ -65,7 +67,7 @@
     @apply placeholder-gray-300;
   }
 
-  &.full-width {
+  &.#{$prefix}full-width {
     @apply w-full;
   }
 }

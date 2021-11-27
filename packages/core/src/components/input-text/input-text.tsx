@@ -7,14 +7,10 @@ import {
   Element,
   State,
 } from '@stencil/core';
+import { COLOR, colors, SIZE, sizes } from '../../constants';
+import { TYPE } from './input-text.constant';
 
 const componentClass = 'CrossUIInputText';
-
-enum TYPE {
-  text = 'text',
-  password = 'password',
-  tel = 'tel',
-}
 
 @Component({
   tag: 'cross-input-text',
@@ -23,15 +19,14 @@ export class InputText {
   @Element() el: HTMLElement;
   @Prop({ mutable: true }) disabled: boolean = false;
   @Prop({ mutable: true }) required: boolean = false;
+  @Prop() multiline: boolean = false;
   @Prop({ mutable: true }) label: string = '';
-  @Prop({ mutable: true }) type: string = TYPE.text;
+  @Prop({ mutable: true }) type: string = TYPE.TEXT;
   @Prop({ mutable: true }) value: string = '';
   @Prop({ mutable: true }) hint: string = '';
   @Prop({ mutable: true }) placeholder: string = '';
-  @Prop({ mutable: true }) size: string = 'small';
-  @Prop() color: string = 'primary';
-
-  @Prop() multiline: boolean = false;
+  @Prop({ mutable: true }) size: string = SIZE.SMALL;
+  @Prop() color: string = COLOR.PRIMARY;
   @Prop() cols: number = null;
   @Prop() rows: number = null;
 
@@ -42,7 +37,27 @@ export class InputText {
   componentWillLoad() {
     if (!Boolean(this.label && this.placeholder)) {
       console.warn(
-        "[CROSS]: If you don't use label, placeholder attribute is mandatory",
+        "[CROSS-UI]: If you don't use label, placeholder attribute is mandatory",
+      );
+    }
+
+    if (!colors.includes(this.color)) {
+      throw new Error(
+        `[CROSS-UI]: Color "${
+          this.color
+        }" is not allowed. Please, use one of the following options: ${colors.join(
+          ', ',
+        )}`,
+      );
+    }
+
+    if (!sizes.includes(this.size)) {
+      throw new Error(
+        `[CROSS-UI]: Size "${
+          this.size
+        }" is not allowed. Please, use one of the following options: ${sizes.join(
+          ', ',
+        )}`,
       );
     }
   }
@@ -103,9 +118,9 @@ export class InputText {
   render() {
     const style: string = [
       componentClass,
-      this.size,
-      this.disabled,
-      this.color,
+      `cross_ui__${this.size}`,
+      this.disabled || '',
+      `cross_ui__${this.color}`,
     ].join(' ');
 
     return (
