@@ -38,6 +38,7 @@ export class ComponentsInputText {
           <cross-input-text
             label="Label text"
             value="this is the content"
+            size="small"
           ></cross-input-text>
         </div>
 
@@ -46,6 +47,7 @@ export class ComponentsInputText {
             disabled={true}
             label="Label text"
             value="this is the content"
+            size="small"
           ></cross-input-text>
         </div>
 
@@ -58,7 +60,6 @@ export class ComponentsInputText {
         <div class="mb-8">
           <cross-input-text
             label="Label text"
-            size="medium"
             placeholder="placeholder"
           ></cross-input-text>
         </div>

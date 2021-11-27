@@ -3,6 +3,7 @@ import { COLOR, COLORS, SIZE, SIZES } from '../../constants';
 import { TYPE } from './button.constant';
 
 const componentClass = 'CrossUIButton';
+const componentPrefix = `${componentClass}--`;
 
 @Component({
   tag: 'cross-button',
@@ -81,14 +82,14 @@ export class Button {
       .join(' ');
     const style: string = [
       componentClass,
-      this.pill ? 'cross_ui__pill' : '',
-      `cross_ui__${this.color}`,
-      `cross_ui__${this.size}`,
-      this.outline ? 'cross_ui__outline' : 'cross_ui__default',
-      this.circle ? 'cross_ui__circle' : '',
-      this.square ? 'cross_ui__square' : '',
-      this.active || this.selected ? 'cross_ui__active' : '',
-      this.fullWidth ? `cross_ui__full-width` : '',
+      this.pill ? `${componentPrefix}pill` : '',
+      `${componentPrefix}${this.color}`,
+      `${componentPrefix}${this.size}`,
+      this.outline ? `${componentPrefix}outline` : `${componentPrefix}default`,
+      this.circle ? `${componentPrefix}circle` : '',
+      this.square ? `${componentPrefix}square` : '',
+      this.active || this.selected ? `${componentPrefix}active` : '',
+      this.fullWidth ? `${componentPrefix}full-width` : '',
       extraClasses,
     ].join(' ');
 

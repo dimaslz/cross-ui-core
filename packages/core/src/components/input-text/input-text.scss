@@ -1,4 +1,4 @@
-$prefix: 'cross_ui__';
+$prefix: 'CrossUIInputText--';
 
 .CrossUIInputText {
   @apply text-gray-600 bg-transparent block;
@@ -17,10 +17,14 @@ $prefix: 'cross_ui__';
         &:focus {
           @apply border-opacity-50 border-#{$color-value}-500;
         }
+
+        &.#{$prefix}error {
+          @apply border-red-300;
+        }
       }
 
       &.#{$prefix}small {
-        @apply text-xs;
+        @apply text-sm;
         input,
         textarea {
           @apply px-2 py-1;

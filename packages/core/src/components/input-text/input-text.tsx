@@ -11,6 +11,7 @@ import { COLOR, COLORS, SIZE, SIZES } from '../../constants';
 import { TYPE } from './input-text.constant';
 
 const componentClass = 'CrossUIInputText';
+const componentPrefix = `${componentClass}--`;
 
 @Component({
   tag: 'cross-input-text',
@@ -25,7 +26,7 @@ export class InputText {
   @Prop({ mutable: true }) value: string = '';
   @Prop({ mutable: true }) hint: string = '';
   @Prop({ mutable: true }) placeholder: string = '';
-  @Prop({ mutable: true }) size: string = SIZE.SMALL;
+  @Prop({ mutable: true }) size: string = SIZE.MEDIUM;
   @Prop() color: string = COLOR.PRIMARY;
   @Prop() cols: number = null;
   @Prop() rows: number = null;
@@ -118,9 +119,9 @@ export class InputText {
   render() {
     const style: string = [
       componentClass,
-      `cross_ui__${this.size}`,
+      `${componentPrefix}${this.size}`,
       this.disabled || '',
-      `cross_ui__${this.color}`,
+      `${componentPrefix}${this.color}`,
     ].join(' ');
 
     return (
@@ -131,7 +132,7 @@ export class InputText {
             value={this.value}
             disabled={this.disabled}
             placeholder={this.placeholder}
-            class={this.error ? 'border-red-300' : ''}
+            class={this.error ? `${componentPrefix}error` : ''}
             cols={this.cols}
             rows={this.rows}
             id={this.el.id}
@@ -142,7 +143,7 @@ export class InputText {
             value={this.value}
             disabled={this.disabled}
             placeholder={this.placeholder}
-            class={this.error ? 'border-red-300' : ''}
+            class={this.error ? `${componentPrefix}error` : ''}
             id={this.el.id}
           />
         )}

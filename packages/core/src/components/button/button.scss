@@ -1,7 +1,7 @@
-$prefix: 'cross_ui__';
+$prefix: 'CrossUIButton--';
 
 .CrossUIButton {
-  @apply cursor-pointer border-solid border font-sans flex justify-center;
+  @apply cursor-pointer border-solid border font-sans flex justify-center rounded-sm;
 
   @each $color in $colors {
     &.#{$prefix}#{$color} {
@@ -22,7 +22,7 @@ $prefix: 'cross_ui__';
 
       // SIZES
       &.#{$prefix}small {
-        @apply h-6 text-xs;
+        @apply text-sm px-2 py-1;
 
         &.#{$prefix}circle,
         &.#{$prefix}square {
@@ -31,7 +31,7 @@ $prefix: 'cross_ui__';
       }
 
       &.#{$prefix}medium {
-        @apply h-8 text-sm;
+        @apply text-sm p-2;
 
         &.#{$prefix}circle,
         &.#{$prefix}square {
@@ -40,7 +40,7 @@ $prefix: 'cross_ui__';
       }
 
       &.#{$prefix}large {
-        @apply h-10 text-base;
+        @apply text-sm px-2 py-3;
 
         &.#{$prefix}circle,
         &.#{$prefix}square {
