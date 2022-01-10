@@ -3,7 +3,7 @@
   "version": "0.0.1-alpha.4",
   "private": false,
   "devDependencies": {
-    "@commitlint/cli": "^12.1.4",
+    "@commitlint/cli": "^16.0.2",
     "@commitlint/config-conventional": "^12.1.4",
     "@release-it/bumper": "^2.0.0",
     "gh-pages": "^3.2.1",
