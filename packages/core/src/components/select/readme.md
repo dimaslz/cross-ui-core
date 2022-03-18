@@ -10,16 +10,13 @@
 | Property      | Attribute     | Description | Type      | Default         |
 | ------------- | ------------- | ----------- | --------- | --------------- |
 | `color`       | `color`       |             | `string`  | `COLOR.PRIMARY` |
-| `cols`        | `cols`        |             | `number`  | `null`          |
+| `data`        | --            |             | `any[]`   | `[]`            |
 | `disabled`    | `disabled`    |             | `boolean` | `false`         |
 | `hint`        | `hint`        |             | `string`  | `''`            |
 | `label`       | `label`       |             | `string`  | `''`            |
-| `multiline`   | `multiline`   |             | `boolean` | `false`         |
 | `placeholder` | `placeholder` |             | `string`  | `''`            |
 | `required`    | `required`    |             | `boolean` | `false`         |
-| `rows`        | `rows`        |             | `number`  | `null`          |
 | `size`        | `size`        |             | `string`  | `SIZE.MEDIUM`   |
-| `type`        | `type`        |             | `string`  | `TYPE.TEXT`     |
 | `value`       | `value`       |             | `string`  | `''`            |
 
 

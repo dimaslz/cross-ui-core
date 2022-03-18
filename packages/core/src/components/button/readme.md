@@ -15,9 +15,9 @@
 | `outline`   | `outline`    |             | `boolean` | `false`         |
 | `pill`      | `pill`       |             | `boolean` | `false`         |
 | `selected`  | `selected`   |             | `boolean` | `false`         |
-| `size`      | `size`       |             | `string`  | `'medium'`      |
+| `size`      | `size`       |             | `string`  | `SIZE.MEDIUM`   |
 | `square`    | `square`     |             | `boolean` | `false`         |
-| `type`      | `type`       |             | `string`  | `'button'`      |
+| `type`      | `type`       |             | `string`  | `TYPE.BUTTON`   |
 
 
 ----------------------------------------------

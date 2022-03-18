@@ -1,6 +1,6 @@
 import { Component, h, State } from '@stencil/core';
 
-import { COLORS } from '../../../../../packages/core/src/constants';
+import { COLORS } from '@cross-ui/core/dist';
 
 const IconDemoComponent = () => (
   <svg
@@ -58,9 +58,9 @@ export class ComponentsButton {
     console.log('onBlur', $event);
   }
 
-  private onFocus($event) {
-    console.log('onFocus', $event);
-  }
+  // private onFocus($event) {
+  //   console.log('onFocus', $event);
+  // }
 
   render() {
     return (

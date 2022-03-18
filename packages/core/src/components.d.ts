@@ -33,6 +33,17 @@ export namespace Components {
         "type": string;
         "value": string;
     }
+    interface CrossSelect {
+        "color": string;
+        "data": any[];
+        "disabled": boolean;
+        "hint": string;
+        "label": string;
+        "placeholder": string;
+        "required": boolean;
+        "size": string;
+        "value": string;
+    }
 }
 declare global {
     interface HTMLCrossButtonElement extends Components.CrossButton, HTMLStencilElement {
@@ -47,9 +58,16 @@ declare global {
         prototype: HTMLCrossInputTextElement;
         new (): HTMLCrossInputTextElement;
     };
+    interface HTMLCrossSelectElement extends Components.CrossSelect, HTMLStencilElement {
+    }
+    var HTMLCrossSelectElement: {
+        prototype: HTMLCrossSelectElement;
+        new (): HTMLCrossSelectElement;
+    };
     interface HTMLElementTagNameMap {
         "cross-button": HTMLCrossButtonElement;
         "cross-input-text": HTMLCrossInputTextElement;
+        "cross-select": HTMLCrossSelectElement;
     }
 }
 declare namespace LocalJSX {
@@ -80,9 +98,21 @@ declare namespace LocalJSX {
         "type"?: string;
         "value"?: string;
     }
+    interface CrossSelect {
+        "color"?: string;
+        "data"?: any[];
+        "disabled"?: boolean;
+        "hint"?: string;
+        "label"?: string;
+        "placeholder"?: string;
+        "required"?: boolean;
+        "size"?: string;
+        "value"?: string;
+    }
     interface IntrinsicElements {
         "cross-button": CrossButton;
         "cross-input-text": CrossInputText;
+        "cross-select": CrossSelect;
     }
 }
 export { LocalJSX as JSX };
@@ -91,6 +121,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "cross-button": LocalJSX.CrossButton & JSXBase.HTMLAttributes<HTMLCrossButtonElement>;
             "cross-input-text": LocalJSX.CrossInputText & JSXBase.HTMLAttributes<HTMLCrossInputTextElement>;
+            "cross-select": LocalJSX.CrossSelect & JSXBase.HTMLAttributes<HTMLCrossSelectElement>;
         }
     }
 }

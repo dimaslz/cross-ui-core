@@ -41,32 +41,7 @@ export namespace Components {
     }
     interface ComponentsInputText {
     }
-    interface CrossButton {
-        "active": boolean;
-        "circle": boolean;
-        "color": string;
-        "disabled": boolean;
-        "fullWidth": boolean;
-        "outline": boolean;
-        "pill": boolean;
-        "selected": boolean;
-        "size": string;
-        "square": boolean;
-        "type": string;
-    }
-    interface CrossInputText {
-        "color": string;
-        "cols": number;
-        "disabled": boolean;
-        "hint": string;
-        "label": string;
-        "multiline": boolean;
-        "placeholder": string;
-        "required": boolean;
-        "rows": number;
-        "size": string;
-        "type": string;
-        "value": string;
+    interface ComponentsSelect {
     }
 }
 declare global {
@@ -166,17 +141,11 @@ declare global {
         prototype: HTMLComponentsInputTextElement;
         new (): HTMLComponentsInputTextElement;
     };
-    interface HTMLCrossButtonElement extends Components.CrossButton, HTMLStencilElement {
+    interface HTMLComponentsSelectElement extends Components.ComponentsSelect, HTMLStencilElement {
     }
-    var HTMLCrossButtonElement: {
-        prototype: HTMLCrossButtonElement;
-        new (): HTMLCrossButtonElement;
-    };
-    interface HTMLCrossInputTextElement extends Components.CrossInputText, HTMLStencilElement {
-    }
-    var HTMLCrossInputTextElement: {
-        prototype: HTMLCrossInputTextElement;
-        new (): HTMLCrossInputTextElement;
+    var HTMLComponentsSelectElement: {
+        prototype: HTMLComponentsSelectElement;
+        new (): HTMLComponentsSelectElement;
     };
     interface HTMLElementTagNameMap {
         "app-404": HTMLApp404Element;
@@ -195,8 +164,7 @@ declare global {
         "app-why": HTMLAppWhyElement;
         "components-button": HTMLComponentsButtonElement;
         "components-input-text": HTMLComponentsInputTextElement;
-        "cross-button": HTMLCrossButtonElement;
-        "cross-input-text": HTMLCrossInputTextElement;
+        "components-select": HTMLComponentsSelectElement;
     }
 }
 declare namespace LocalJSX {
@@ -234,32 +202,7 @@ declare namespace LocalJSX {
     }
     interface ComponentsInputText {
     }
-    interface CrossButton {
-        "active"?: boolean;
-        "circle"?: boolean;
-        "color"?: string;
-        "disabled"?: boolean;
-        "fullWidth"?: boolean;
-        "outline"?: boolean;
-        "pill"?: boolean;
-        "selected"?: boolean;
-        "size"?: string;
-        "square"?: boolean;
-        "type"?: string;
-    }
-    interface CrossInputText {
-        "color"?: string;
-        "cols"?: number;
-        "disabled"?: boolean;
-        "hint"?: string;
-        "label"?: string;
-        "multiline"?: boolean;
-        "placeholder"?: string;
-        "required"?: boolean;
-        "rows"?: number;
-        "size"?: string;
-        "type"?: string;
-        "value"?: string;
+    interface ComponentsSelect {
     }
     interface IntrinsicElements {
         "app-404": App404;
@@ -278,8 +221,7 @@ declare namespace LocalJSX {
         "app-why": AppWhy;
         "components-button": ComponentsButton;
         "components-input-text": ComponentsInputText;
-        "cross-button": CrossButton;
-        "cross-input-text": CrossInputText;
+        "components-select": ComponentsSelect;
     }
 }
 export { LocalJSX as JSX };
@@ -302,8 +244,7 @@ declare module "@stencil/core" {
             "app-why": LocalJSX.AppWhy & JSXBase.HTMLAttributes<HTMLAppWhyElement>;
             "components-button": LocalJSX.ComponentsButton & JSXBase.HTMLAttributes<HTMLComponentsButtonElement>;
             "components-input-text": LocalJSX.ComponentsInputText & JSXBase.HTMLAttributes<HTMLComponentsInputTextElement>;
-            "cross-button": LocalJSX.CrossButton & JSXBase.HTMLAttributes<HTMLCrossButtonElement>;
-            "cross-input-text": LocalJSX.CrossInputText & JSXBase.HTMLAttributes<HTMLCrossInputTextElement>;
+            "components-select": LocalJSX.ComponentsSelect & JSXBase.HTMLAttributes<HTMLComponentsSelectElement>;
         }
     }
 }

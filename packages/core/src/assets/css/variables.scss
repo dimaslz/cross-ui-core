@@ -1,4 +1,5 @@
-$colors: 'primary', 'secondary', 'accent', 'danger', 'warning', 'success', 'info';
+$colors: 'primary', 'secondary', 'accent', 'danger', 'warning', 'success',
+  'info';
 $colors-map: () !default;
 
 @function darker($color, $percentage) {
@@ -28,3 +29,7 @@ $colors-map: map-merge(
   ),
   $colors-map
 );
+
+:root {
+  --cui-color-primary: purple;
+}

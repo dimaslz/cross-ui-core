@@ -16,6 +16,7 @@ export class AppComponents {
             <stencil-route-switch scrollTopOffset={0}>
               <stencil-route url="/components/button" component="components-button" exact={true} />
               <stencil-route url="/components/input-text" component="components-input-text" exact={true} />
+              <stencil-route url="/components/select" component="components-select" exact={true} />
             </stencil-route-switch>
           </stencil-router>
         </div>

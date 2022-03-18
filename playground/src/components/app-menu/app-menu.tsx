@@ -47,6 +47,11 @@ export class AppMenu {
                       InputText
                     </stencil-route-link>
                   </li>
+                  <li>
+                    <stencil-route-link url="/components/select" class="hover:text-green-500">
+                      Select
+                    </stencil-route-link>
+                  </li>
                 </ul>
               </ul>
             </li>

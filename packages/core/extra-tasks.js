@@ -35,7 +35,7 @@ function moveSCSS() {
 
 function getVariables(css) {
   const originalUtilitiesCSS = fs.readFileSync(
-    path.resolve(`${nodeModulesDir}/tailwindcss/dist/utilities.css`),
+    path.resolve(`${nodeModulesDir}/tailwindcss/utilities.css`),
     'utf8',
   );
 
