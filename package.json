@@ -1,14 +1,24 @@
 {
   "name": "@cross-ui/core",
   "version": "0.0.1-alpha.4",
-  "private": false,
+  "private": true,
+  "workspaces": {
+    "packages": [
+			"playground",
+			"playgroundBB",
+			"packages/*"
+		],
+		"nohoist": [
+			"**/@cross-ui\/core",
+			"**/@cross-ui\/core/**"
+		]
+  },
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
-    "@commitlint/config-conventional": "^12.1.4",
+    "@commitlint/config-conventional": "^16.2.1",
     "@release-it/bumper": "^2.0.0",
     "gh-pages": "^3.2.1",
     "husky": "^6.0.0",
-    "lerna": "^4.0.0",
     "release-it": "^14.9.0"
   },
   "scripts": {
@@ -27,5 +37,6 @@
   "main": "index.js",
   "repository": "https://github.com/dimaslz/cross-ui-core.git",
   "author": "dimaslz <me@dimaslz.io>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {}
 }
